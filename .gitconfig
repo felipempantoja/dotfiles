@@ -1,15 +1,15 @@
 [core]
-	editor = nvim
-	autocrlf = input
+  editor = nvim
+  autocrlf = input
 [user]
   email = felimpantoja@gmail.com
   name = Felipe Pantoja
 [m4u]
-	email = felipe.pantoja@m4u.com.br
-	name = Felipe Pantoja
+email = felipe.pantoja@m4u.com.br
+name = Felipe Pantoja
 [pager]
-	branch = false
+  branch = false
 [credential]
-	helper = store
+  helper = store
 [push]
-	default = current
+  default = current
