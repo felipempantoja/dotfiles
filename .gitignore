@@ -1,5 +1,9 @@
+# ignore all by default...
 *
 
+# ...then add only what matters
+
+# neovim
 !.config/nvim/UltiSnips/
 !.config/nvim/autoload/
 !.config/nvim/config/
@@ -8,21 +12,30 @@
 !.config/nvim/coc-settings.json
 !.config/nvim/init.vim
 
-!.config/tmuxinator/rails.yml
+# tmuxinator template files
+!.config/tmuxinator/
 
+# yadm bootstrap file for auto executing after git checkout
 !.config/yadm/bootstrap
 
+# tmux configs
 !.tmux/.tmux.conf
 !.tmux.conf
 
+# git personal configs
 !.gitconfig
+
+# this very file
 !.gitignore
 
-!.profile
-
+# single screen recorder tool configs
 !.ssr/settings.conf
+
+# asdf global defaults
 !.tool-versions
 
+# zshell configs
 !.zshrc
 
+# tips for using this dotfiles repo
 !README.md
