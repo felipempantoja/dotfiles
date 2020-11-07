@@ -5,8 +5,22 @@ os=$(uname -a)
 if [[ "$os" == *"Ubuntu"* ]]; then
   echo "DISTRO: UBUNTU"
 
+  sudo apt install curl git
+
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+  cd ~/.asdf
+  git checkout "$(git describe --abbrev=0 --tags)"
+
+  cd ~
+
   echo "Installing neovim..."
   sudo apt install neovim
+
+  echo "Installing tmux..."
+  sudo apt install tmux
+
+  echo "Installing tmuxinator..."
+  # gem install tmuxinator
 
 elif [[ "$os" == *"MANJARO"* ]]; then
   echo "DISTRO: MANJARO"

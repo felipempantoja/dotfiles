@@ -42,7 +42,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 
-alias tig='/home/pantoja/bin/tig'
+alias tig='/home/pantoja/.bin/tig'
 
 alias tx="tmuxinator"
 alias txe="tmuxinator e $1"
