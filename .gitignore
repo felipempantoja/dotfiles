@@ -1,0 +1,23 @@
+# yadm
+.config/yadm/repo.git/
+.config/yadm/repo.git/index
+.config/yadm/repo.git/index.lock
+
+# nvim
+.config/nvim/dein
+.config/nvim/tags*
+.config/nvim/.netrwhist
+.config/nvim/pythonpath.vim
+.config/nvim/nodepath.vim
+.config/nvim/autoload/plugged/*
+.config/nvim/vimspector-config/*
+.config/nvim/paths.vim
+.config/nvim/session
+.config/nvim/pack/
+.config/nvim/undo/
+.config/nvim/plugged/
+.config/nvim/swap/
+.config/nvim/swap-pane
+.config/nvim/viminfo
+.config/nvim/undo/
+.config/nvim/.netrwhist

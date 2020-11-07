@@ -1,0 +1,24 @@
+#!/bin/bash
+
+os=$(uname -a)
+
+if [[ "$os" == *"Ubuntu"* ]]; then
+  echo "DISTRO: UBUNTU"
+
+  echo "Installing neovim..."
+  sudo apt install neovim
+
+elif [[ "$os" == *"MANJARO"* ]]; then
+  echo "DISTRO: MANJARO"
+
+  echo "Installing neovim..."
+  sudo pacman -S neovim
+
+else
+  echo "Distro not configured: $os"
+fi
+
+if command -v nvim >/dev/null 2>&1; then
+  echo "Bootstraping Neovim..."
+  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
