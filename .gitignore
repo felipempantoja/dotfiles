@@ -1,7 +1,5 @@
 # yadm
 .config/yadm/repo.git/
-.config/yadm/repo.git/index
-.config/yadm/repo.git/index.lock
 
 # nvim
 .config/nvim/dein
