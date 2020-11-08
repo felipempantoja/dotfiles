@@ -30,3 +30,4 @@ source $HOME/.config/nvim/plugins/limelight.vim
 source $HOME/.config/nvim/plugins/blamer.vim
 source $HOME/.config/nvim/plugins/illuminate.vim
 source $HOME/.config/nvim/plugins/indentline.vim
+source $HOME/.config/nvim/plugins/rooter.vim

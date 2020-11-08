@@ -8,15 +8,14 @@ let g:startify_session_autoload = 1
 " always point to root folder so FZF finds files accordingly
 let g:startify_change_to_vcs_root = 1
 
-let g:startify_files_number = 7
+let g:startify_files_number = 4
 
 " bookmarks 
 let g:startify_bookmarks = [
 			\ { 'i': '~/.config/nvim/init.vim' },
 			\ { 'z': '~/.zshrc' },
-			\ '~/workspace/oi-recargas',
-			\ '~/workspace/thundercats',
-			\ '~/workspace/study',
+			\ { 'c': '~/.config' },
+			\ { 'w': '~/workspace' },
 			\ ]
 
 let g:startify_lists = [

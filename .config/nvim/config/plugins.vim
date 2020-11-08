@@ -70,6 +70,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-abolish' " word substitution/abbreviation
   Plug 'liuchengxu/vim-which-key' " a keymapping help panel
   Plug 'voldikss/vim-floaterm' " builtin terminal in a popup window
+  Plug 'airblade/vim-rooter' " Changes Vim working directory to project root
 
 call plug#end()
 
