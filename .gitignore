@@ -3,6 +3,9 @@
 
 # ...then add only what matters
 
+# alacritty terminal configs
+!.alacritty.yml
+
 # neovim
 !.config/nvim/UltiSnips/
 !.config/nvim/autoload/
@@ -18,15 +21,14 @@
 # yadm bootstrap file for auto executing after git checkout
 !.config/yadm/bootstrap
 
-# tmux configs
-!.tmux/.tmux.conf
-!.tmux.conf
-
 # git personal configs
 !.gitconfig
 
 # this very file
 !.gitignore
+
+# tips for using this dotfiles repo
+!README.md
 
 # single screen recorder tool configs
 !.ssr/settings.conf
@@ -34,8 +36,9 @@
 # asdf global defaults
 !.tool-versions
 
+# tmux configs
+!.tmux/.tmux.conf
+!.tmux.conf
+
 # zshell configs
 !.zshrc
-
-# tips for using this dotfiles repo
-!README.md
