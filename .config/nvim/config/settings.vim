@@ -36,6 +36,10 @@ set signcolumn=yes                      " Always show the signcolumn, otherwise 
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
 
+set completeopt=noinsert,noselect,menuone
+
+set smartcase                           "Override the 'ignorecase' option if the search pattern contains uppercase characters
+
 set guifont=JetBrainsMono\ Nerd\ Font   " Only GUI clients like Gvim or macvim use the set guifont option. Just set the font in the terminal.
 
 set t_ut=                               " fixes transparent BG on tmux
@@ -50,11 +54,17 @@ if has("persistent_undo")
   set undofile
 endif
 
-" au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" automatically set any ruby spec buffers to ruby filetype (somehow vim is not doing this by itself)
+au BufRead,BufNewFile *_spec.rb set filetype=ruby
 
 " You can't stop me
 cmap w!! w !sudo tee %
 
 " updates ctags when vim starts
 " autocmd VimEnter * silent !ctags -R --exclude="*min.js"
+
+" make vim see js(x) buffers as javascript.jsx file types
+autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx

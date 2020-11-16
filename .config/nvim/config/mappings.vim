@@ -9,6 +9,7 @@ noremap <Right> <Nop>
 
 " too lazy for hitting esc button
 inoremap jj <ESC>
+inoremap JJ <ESC>
 
 " shortcut for saving files
 map <Leader>w :w<CR>
@@ -34,7 +35,6 @@ map <Leader>n :tabnew<cr>
 " tab switch
 map gt :bnext<CR>
 map gT :bprevious<CR>
-map qq :bw<CR>
 
 " shortening the shortcut for split buffer navigation
 nnoremap <C-J> <C-W><C-J>
@@ -42,5 +42,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Use ESC to exit insert mode in :term
-" tnoremap <ESC> <C-\><C-n>
+" inoremap <silent><expr> <CR> pumvisible() ? "\<C-y><CR>" : "\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

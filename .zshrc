@@ -33,6 +33,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# make cd command needless
+setopt auto_cd
 
 # aliases
 
@@ -43,6 +45,9 @@ alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 
 alias tig='/home/pantoja/.bin/tig'
+
+alias hoverfly='/home/pantoja/.bin/hoverfly'
+alias hoverctl='/home/pantoja/.bin/hoverctl'
 
 alias tx="tmuxinator"
 alias txe="tmuxinator e $1"

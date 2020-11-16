@@ -16,7 +16,15 @@ own repository. I'm using YADM and it's one of the first things I need to instal
 - [ChristianChiarulli/nvim](https://github.com/ChristianChiarulli/nvim)
 - [gacha/vim-tiny](https://github.com/gacha/vim-tiny)
 - [DarthNyan Gists](https://gist.github.com/DarthNyan)
+- [mlaursen/vim-react-snippets](https://github.com/mlaursen/vim-react-snippets)
+
+## Known Bugs
+
+- [x] Blamer.vim stopped working and I don't know when and why ;/
+- [x] Endwise not working on \*\_spec.rb buffers
 
 ## Roadmap
 
+- [ ] Fix Java LSP for coc
 - [ ] Make use of Ansible for fully automation of my workstation
+- [ ] Rubocop autofix (on save?)
