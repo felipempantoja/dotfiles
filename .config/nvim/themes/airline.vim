@@ -7,6 +7,9 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 let airline#extensions#tabline#show_splits = 0
 let airline#extensions#tabline#tabs_label = ''
 
+" integration to battery.vim plugin
+let g:airline#extensions#battery#enabled = 1
+
 " Disable tabline close button
 " let g:airline#extensions#tabline#show_close_button = 0
 " let g:airline#extensions#tabline#show_tab_type = 0

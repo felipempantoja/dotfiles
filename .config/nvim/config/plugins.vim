@@ -14,6 +14,8 @@ call plug#begin('~/.config/nvim/plugged')
 
   " eye candy
   Plug 'vim-airline/vim-airline'
+  Plug 'enricobacis/vim-airline-clock' " for showing time on the airline status bar
+  Plug 'lambdalisue/battery.vim' " for showing battery percentage on the status bar
   Plug 'christianchiarulli/nvcode.vim'
   Plug 'psliwka/vim-smoothie'
   Plug 'norcalli/nvim-colorizer.lua'
@@ -21,34 +23,37 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'kien/rainbow_parentheses.vim' " for colorizing parentheses
   Plug 'junegunn/limelight.vim'
   Plug 'RRethy/vim-illuminate' " highlighting other uses of the word under the cursor
-  Plug 'Yggdroot/indentLine' " for displaying thin vertical lines at each indentation level for code (json view conflicts)
+  Plug 'machakann/vim-highlightedyank'
+  " Plug 'Yggdroot/indentLine' " for displaying thin vertical lines at each indentation level for code (json view conflicts)
 
   " navigation
   Plug 'easymotion/vim-easymotion' " navigate to words/lines/letters fastly (<leader><leader>w + hit highlight target letter)
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'wellle/targets.vim'
 
   " editing
   Plug 'junegunn/goyo.vim' " zen mode
   Plug 'mbbill/undotree' " undo time travel
   Plug 'tpope/vim-commentary' " comment stuff out
-  Plug 'puremourning/vimspector' " multi language graphical debugger
-  Plug 'terryma/vim-expand-region' " visually select increasingly larger regions of text
+  " Plug 'puremourning/vimspector' " multi language graphical debugger
+  " Plug 'terryma/vim-expand-region' " visually select increasingly larger regions of text
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'tpope/vim-surround' " for surrondings (parenthesis, brackets, quotes, tags, and more)
   Plug 'tpope/vim-repeat' " fixes vim-surround plugin when repeating command '.' (dot)
   Plug 'tpope/vim-abolish' " word substitution/abbreviation
+  " Plug 'hashivim/vim-terraform'
+  Plug 'brooth/far.vim' " find and replace plugin
 
   " ruby / rails
   Plug 'tpope/vim-endwise' " self-explanatory
   Plug 'vim-ruby/vim-ruby' " syntax highlighting, indentation, omnicompletion, and various useful tools and mapping
   Plug 'tpope/vim-rake', { 'for': 'ruby' }
   Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-  Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby' }
-  " Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby'] } " text object that removes an (entire/enclosing) ruby block (cir/dir/car/dar)
-  
+  " Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+  " Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby' }
+
   " Frontend
   Plug 'leafgarland/typescript-vim' " will do all the coloring for typescript keyword
   Plug 'peitalin/vim-jsx-typescript' " will do all the coloring for jsx in the .tsx files
@@ -59,8 +64,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive' " for git utilities
   Plug 'junegunn/gv.vim' " more git utilities
   Plug 'airblade/vim-gitgutter' " shows a git diff in the sign column
-  Plug 'APZelos/blamer.nvim' " shows the last commit user at the cursor line
-  
+  " Plug 'APZelos/blamer.nvim' " shows the last commit user at the cursor line
+
   " language tools
   Plug 'w0rp/ale' " async lint engine
   Plug 'janko-m/vim-test' " for running tests
@@ -70,6 +75,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'voldikss/vim-floaterm' " builtin terminal in a popup window
   Plug 'airblade/vim-rooter' " Changes Vim working directory to project root
   Plug 'moll/vim-bbye' " allows you to do delete buffers (close files) without closing your windows or messing up your layout
+  " Plug 'mhinz/neovim-remote'
+  " Plug 'arithran/vim-delete-hidden-buffers' " deletes all buffers except the current one
+  " Plug 'nvim-treesitter/nvim-treesitter' " only works on nvim 0.5.0+ which is not released yet
 
 call plug#end()
 

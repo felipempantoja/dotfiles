@@ -9,7 +9,7 @@ set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages
+set cmdheight=1                         " More space for displaying messages
 set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
@@ -46,6 +46,8 @@ set t_ut=                               " fixes transparent BG on tmux
 
 set colorcolumn=130                     " draws a vertical line for delimiting suggestion
 
+colorscheme onedark
+
 " undo
 set undolevels=1000                     " how many undos
 set undoreload=10000                    " number of lines to save for undo
@@ -68,3 +70,11 @@ cmap w!! w !sudo tee %
 " make vim see js(x) buffers as javascript.jsx file types
 autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+
+" used to autoclose netrw after choosing the file within it
+let g:netrw_fastbrowse = 0
+
+" uses nvr inside nvim as git editor
+if has('nvim')
+  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+endif

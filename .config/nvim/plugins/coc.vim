@@ -27,6 +27,7 @@ let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-solargraph',
     \ 'coc-tabnine',
+    \ 'coc-highlight',
     \ ]
 
 " Adds coc-prettier only if project has prettier package within
@@ -64,6 +65,9 @@ nmap <leader>do <Plug>(coc-codeaction)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+
+" Yank list
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 " Use K to show documentation in preview window.
 nnoremap <leader> K :call <SID>show_documentation()<CR>
@@ -113,3 +117,5 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+let g:EditorConfig_core_mode = 'external_command'

@@ -13,3 +13,5 @@ name = Felipe Pantoja
   helper = store
 [push]
   default = current
+[alias]
+	pushd = push -u origin HEAD

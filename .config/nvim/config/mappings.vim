@@ -29,7 +29,7 @@ nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " regenerate CTAGS - https://github.com/universal-ctags/ctags
 map <Leader>ct :silent !ctags -R --exclude="*min.js"<CR>
 
-" open a new blank buffer 
+" open a new blank buffer
 map <Leader>n :tabnew<cr>
 
 " tab switch

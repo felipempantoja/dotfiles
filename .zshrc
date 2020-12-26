@@ -70,9 +70,13 @@ alias precommit-add-git-script="ln -s ~/workspace/utils/git_hooks/pre-commit .gi
 # exports
 
 export EDITOR='nvim'
+export VISUAL="nvim"
 
 # mssql driver
 export PATH="$PATH:/opt/mssql-tools/bin"
+
+# fix yarn global commands recognition
+export PATH="$PATH:$(yarn global bin)"
 
 export ASDF_RUBY_BUILD_VERSION=v20200819
 

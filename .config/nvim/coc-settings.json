@@ -9,7 +9,8 @@
     "graphql",
     "html",
     "yaml",
-    "json"
+    "json",
+    "java"
   ],
 
   "tsserver.formatOnType": true,
@@ -29,6 +30,12 @@
     "typescript.tsx"
   ],
 
+  "java.home": "/usr/lib/jvm/java-1.8.0-openjdk-amd64",
+  "java.import.maven.enabled": true,
+  "java.import.gradle.enabled": true,
+  "java.import.gradle.wrapper.enabled": true,
+  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/UltiSnips"],
 
   // emmet
@@ -39,6 +46,7 @@
 
   // explorer
   "explorer.width": 30,
+  "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings": {
@@ -53,13 +61,8 @@
   "languageserver": {
     "terraform": {
       "command": "terraform-lsp",
-      "filetypes": ["terraform"],
+      "filetypes": ["terraform", "tf"],
       "initializationOptions": {}
-    },
-    "kotlin": {
-      // requires kotlin languageserver (unzip server.zip into below folder). Download it from: https://github.com/fwcd/kotlin-language-server/releases
-      "command": "~/.lsp/kotlin/server/bin/kotlin-language-server",
-      "filetypes": ["kotlin"]
     }
   }
 }
