@@ -6,6 +6,9 @@
 # alacritty terminal configs
 !.config/alacritty/.alacritty.yml
 
+# ansible playbooks
+!ansible/
+
 # neovim
 !.config/nvim/UltiSnips/
 !.config/nvim/autoload/

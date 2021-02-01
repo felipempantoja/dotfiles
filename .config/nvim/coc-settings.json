@@ -22,13 +22,8 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
 
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "typescript.tsx"
-  ],
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
 
   "java.home": "/usr/lib/jvm/java-1.8.0-openjdk-amd64",
   "java.import.maven.enabled": true,
@@ -49,7 +44,7 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit",
     "!": "cd"

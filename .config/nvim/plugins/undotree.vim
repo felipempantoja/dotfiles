@@ -18,4 +18,4 @@ if !exists('g:undotree_HighlightChangedWithSign')
     let g:undotree_HighlightChangedWithSign = 1
 endif
 
-nnoremap <F6> :UndotreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>

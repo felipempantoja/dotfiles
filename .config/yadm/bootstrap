@@ -5,34 +5,47 @@ os=$(uname -a)
 if [[ "$os" == *"Ubuntu"* ]]; then
   echo "DISTRO: UBUNTU"
 
-  sudo apt install curl git
+  # sudo apt install curl git
 
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-  cd ~/.asdf
-  git checkout "$(git describe --abbrev=0 --tags)"
+  # git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+  # cd ~/.asdf
+  # git checkout "$(git describe --abbrev=0 --tags)"
 
-  cd ~
+  echo "Updating the system..."
+  sudo apt update
 
-  echo "Installing neovim..."
-  sudo apt install neovim
+  echo "Installing ansible..."
+  sudo apt update
+  sudo apt install software-properties-common
+  sudo apt-add-repository --yes --update ppa:ansible/ansible
+  sudo apt install ansible
 
-  echo "Installing tmux..."
-  sudo apt install tmux
+  # echo "Installing neovim..."
+  # sudo apt install neovim
 
-  echo "Installing tmuxinator..."
+  # echo "Installing tmux..."
+  # sudo apt install tmux
+
+  # echo "Installing tmuxinator..."
   # gem install tmuxinator
 
 elif [[ "$os" == *"MANJARO"* ]]; then
   echo "DISTRO: MANJARO"
 
-  echo "Installing neovim..."
-  sudo pacman -S neovim
+  echo "Updating the system..."
+  sudo pacman -Syy
+
+  echo "Installing ansible..."
+  sudo pacman -S ansible --noconfirm
+
+  echo "Provisioning the workstation with Ansible..."
+  ansible-playbook ./ansible/local.yml --ask-become-pass
 
 else
   echo "Distro not configured: $os"
 fi
 
-if command -v nvim >/dev/null 2>&1; then
-  echo "Bootstraping Neovim..."
-  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
-fi
+# if command -v nvim >/dev/null 2>&1; then
+#   echo "Bootstraping Neovim..."
+#   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+# fi

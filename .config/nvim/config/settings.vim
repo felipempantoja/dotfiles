@@ -9,7 +9,7 @@ set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
-set cmdheight=1                         " More space for displaying messages
+set cmdheight=2                         " More space for displaying messages
 set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
@@ -38,7 +38,8 @@ set incsearch
 
 set completeopt=noinsert,noselect,menuone
 
-set smartcase                           "Override the 'ignorecase' option if the search pattern contains uppercase characters
+set ignorecase                          " Ignore case on search
+set smartcase                           " Override the 'ignorecase' option if the search pattern contains uppercase characters
 
 set guifont=JetBrainsMono\ Nerd\ Font   " Only GUI clients like Gvim or macvim use the set guifont option. Just set the font in the terminal.
 
@@ -49,8 +50,8 @@ set colorcolumn=130                     " draws a vertical line for delimiting s
 colorscheme onedark
 
 " undo
-set undolevels=1000                     " how many undos
-set undoreload=10000                    " number of lines to save for undo
+set undolevels=300                      " how many undos
+set undoreload=3000                     " number of lines to save for undo
 if has("persistent_undo")
   set undodir=~/.config/nvim/undo       " allow undoes to persist even after a file is closed
   set undofile
@@ -63,9 +64,6 @@ au BufRead,BufNewFile *_spec.rb set filetype=ruby
 
 " You can't stop me
 cmap w!! w !sudo tee %
-
-" updates ctags when vim starts
-" autocmd VimEnter * silent !ctags -R --exclude="*min.js"
 
 " make vim see js(x) buffers as javascript.jsx file types
 autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx

@@ -21,16 +21,14 @@ map <F5> :so $MYVIMRC<CR>
 map <Leader><Leader>h :set hlsearch!<CR>
 
 " vertical bar resize
-map <Leader>r8 :vertical resize 80<CR>
-map <Leader>r12 :vertical resize 130<CR>
-nnoremap <silent> <Leader>+ :exe " vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+nnoremap <silent><Leader>+ :exe " vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent><Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " regenerate CTAGS - https://github.com/universal-ctags/ctags
 map <Leader>ct :silent !ctags -R --exclude="*min.js"<CR>
 
 " open a new blank buffer
-map <Leader>n :tabnew<cr>
+map <Leader>n :enew<cr>
 
 " tab switch
 map gt :bnext<CR>

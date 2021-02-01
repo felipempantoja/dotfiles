@@ -14,10 +14,7 @@ let g:coc_global_extensions = [
     \ 'coc-html',
     \ 'coc-css',
     \ 'coc-emoji',
-    \ 'coc-cssmodules',
     \ 'coc-yaml',
-    \ 'coc-python',
-    \ 'coc-pyright',
     \ 'coc-explorer',
     \ 'coc-svg',
     \ 'coc-vimlsp',
@@ -26,9 +23,13 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-marketplace',
     \ 'coc-solargraph',
-    \ 'coc-tabnine',
     \ 'coc-highlight',
+    \ 'coc-styled-components',
     \ ]
+    " \ 'coc-cssmodules',
+    " \ 'coc-python',
+    " \ 'coc-pyright',
+    " \ 'coc-tabnine',
 
 " Adds coc-prettier only if project has prettier package within
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -50,36 +51,37 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
-  inoremap <expr> <Plug>CustomCocCR pumvisible() && complete_info()["selected"] != "-1" ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  inoremap <expr> <Plug>CustomCocCR pumvisible() && complete_info()["selected"] != "-1" ? coc#_select_confirm() : "\<C-g>u\<CR>"
+  " inoremap <expr> <Plug>CustomCocCR pumvisible() && complete_info()["selected"] != "-1" ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>do <Plug>(coc-codeaction)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+nmap <silent><leader>ac :execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent>[g <Plug>(coc-diagnostic-prev)
+nmap <silent>]g <Plug>(coc-diagnostic-next)
+nnoremap <silent><leader>D :<C-u>CocList diagnostics<cr>
 
 " Yank list
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent><leader>y :<C-u>CocList -A --normal yank<cr>
 
 " Use K to show documentation in preview window.
-nnoremap <leader> K :call <SID>show_documentation()<CR>
+nnoremap <leader>K :call <SID>show_documentation()<CR>
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " coc-explorer (https://github.com/weirongxu/coc-explorer)
-nmap <space>e :CocCommand explorer<CR>
-nmap <space>f :CocCommand explorer --preset floating<CR>
+nmap <leader>e :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -116,6 +118,11 @@ function! s:show_documentation()
   else
     call CocAction('doHover')
   endif
+endfunction
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
 endfunction
 
 let g:EditorConfig_core_mode = 'external_command'
