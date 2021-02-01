@@ -1,0 +1,58 @@
+browsers_aur:
+    - google-chrome 88.0.4324.109
+
+cloud_tools_aur:
+    - google-cloud-sdk
+    - aws
+
+developer_stack:
+    - docker
+    - docker-compose
+
+editors:
+    - neovim
+
+editors_aur:
+    - intellij-idea-ultimate-edition
+    - visual-studio-code-bin
+
+media:
+    - peek
+
+multimedia:
+    - gimp
+
+shell_aliases:
+    - alias ll='ls -lrt'
+    - alias vi=vim
+    - alias rgrep='grep -r'
+
+utils:
+    - binutils
+    - gcc
+    - tree
+
+utils_aur:
+    - mkpasswd
+    - git-extras
+
+zsh_plugins:
+    - alias-tips
+    - archlinux
+    - asdf
+    - aws
+    - bundler
+    - docker
+    - docker-compose
+    - dotenv
+    - fzf
+    - git
+    - rails
+    - ruby
+    - rake
+    - tmux
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
+
+comms_aur:
+    - slack-desktop

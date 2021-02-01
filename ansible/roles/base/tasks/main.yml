@@ -1,0 +1,25 @@
+---
+- name: Install Utils
+  pacman:
+    name: '{{ utils }}'
+    state: present
+  become: yes
+
+- name: Install Utils from Arch User Repository
+  script: ../../../scripts/install-aur.sh {{ item }}
+  with_items: '{{ utils_aur }}'
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  tags:
+    - aur
+
+- include: zsh.yml
+- include: snap.yml
+
+- name: Creates Workspace directory
+  file:
+    path: /home/{{ user_name }}/workspace
+    state: directory
+  become_user: '{{ user_name }}'
+  become: yes

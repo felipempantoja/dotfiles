@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+    - { role: base, tags: ['base'] }
+    - { role: browsers, tags: ['browsers'] }
+    - { role: editors, tags: ['editors'] }
+    - { role: comms, tags: ['comms'] }
