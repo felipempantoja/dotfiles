@@ -38,8 +38,12 @@ elif [[ "$os" == *"MANJARO"* ]]; then
   echo "Installing ansible..."
   sudo pacman -S ansible --noconfirm
 
+  echo "Checking the presence of required variables..."
+  [ -z "$USERNAME" ] && echo "USERNAME variable must be present" && exit -1
+  [ -z "$EMAIL" ] && echo "EMAIL variable must be present" && exit -1
+
   echo "Provisioning the workstation with Ansible..."
-  ansible-playbook ./ansible/local.yml --ask-become-pass
+  ansible-playbook ./ansible/playbook.yml --extra-vars="user_name=$USERNAME user_email=$EMAIL" --ask-become-pass
 
 else
   echo "Distro not configured: $os"

@@ -1,6 +1,6 @@
 ---
 - name: Install communication/instant messenger apps from Arch User Repository
-  script: ../../../aur/install-aur.sh {{ item }}
+  script: ../../../scripts/install-aur.sh {{ item }}
   with_items: '{{ comms_aur }}'
   register: install_result
   changed_when: install_result.rc == 0
