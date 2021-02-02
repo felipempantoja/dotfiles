@@ -1,5 +1,5 @@
 browsers_aur:
-    - google-chrome 88.0.4324.109
+    - google-chrome
 
 cloud_tools_aur:
     - aws
@@ -19,14 +19,7 @@ editors_aur:
 
 media:
     - peek
-
-multimedia:
     - gimp
-
-shell_aliases:
-    - alias ll='ls -lrt'
-    - alias vi=vim
-    - alias rgrep='grep -r'
 
 utils:
     - binutils
@@ -36,24 +29,6 @@ utils:
 utils_aur:
     - mkpasswd
     - git-extras
-
-zsh_plugins:
-    - alias-tips
-    - archlinux
-    - asdf
-    - aws
-    - bundler
-    - docker
-    - docker-compose
-    - dotenv
-    - fzf
-    - git
-    - rails
-    - ruby
-    - rake
-    - tmux
-    - zsh-autosuggestions
-    - zsh-syntax-highlighting
 
 comms_aur:
     - slack-desktop

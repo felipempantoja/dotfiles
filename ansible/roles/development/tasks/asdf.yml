@@ -1,5 +1,5 @@
 ---
-- name: Installing asdf
+- name: Installing Asdf
   git:
     repo: 'https://github.com/asdf-vm/asdf.git'
     dest: '/home/{{ user_name }}/.asdf'
@@ -40,3 +40,6 @@
 - name: Adding Tmux Plugin
   shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add tmux'
   ignore_errors: yes
+
+- name: Installing apps from Asdf Plugins
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf install'
