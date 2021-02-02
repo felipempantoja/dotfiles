@@ -20,13 +20,13 @@
 
 - name: Custom Fonts
   package:
-    name: ttf-fira-code ttf-jetbrains-mono
+    name: ['ttf-fira-code', 'ttf-jetbrains-mono']
     state: present
   become: true
 
 - name: CLI Utils
   package:
-    name: ripgrep bat tmux inotify-tools htop pass
+    name: ['ripgrep', 'tmux', 'inotify-tools', 'htop', 'pass']
     state: present
   become: true
 
