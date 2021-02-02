@@ -9,4 +9,22 @@
   shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add nodejs'
 
 - name: Importing Node.js release team's OpenPGP keys
-  shell: 'bash /home/{{ user_name }}/.asdf/plugins/nodejs/bin/import-release-team-keyring'
+  shell: 'bash -c /home/{{ user_name }}/.asdf/plugins/nodejs/bin/import-release-team-keyring'
+
+- name: Adding BAT Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add bat'
+
+- name: Adding Java Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add java'
+
+- name: Adding Maven Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add maven'
+
+- name: Adding Ruby Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add ruby'
+
+- name: Adding Yarn Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add yarn'
+
+- name: Adding neovim Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add neovim'

@@ -7,3 +7,4 @@ ruby 2.7.1
 yarn 1.22.5
 terraform 0.13.3
 redis 6.0.9
+neovim stable

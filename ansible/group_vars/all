@@ -10,7 +10,7 @@ developer_stack:
     - docker-compose
 
 editors:
-    - neovim
+    - vim
 
 editors_aur:
     - intellij-idea-ultimate-edition

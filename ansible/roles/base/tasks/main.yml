@@ -1,4 +1,8 @@
 ---
+- include: zsh.yml
+- include: snap.yml
+- include: dot-files.yml
+
 - name: Install Utils
   pacman:
     name: '{{ utils }}'
@@ -14,8 +18,17 @@
   tags:
     - aur
 
-- include: zsh.yml
-- include: snap.yml
+- name: Custom Fonts
+  package:
+    name: ttf-fira-code ttf-jetbrains-mono
+    state: present
+  become: true
+
+- name: CLI Utils
+  package:
+    name: ripgrep bat tmux inotify-tools htop pass
+    state: present
+  become: true
 
 - name: Creates Workspace directory
   file:

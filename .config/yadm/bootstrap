@@ -32,18 +32,18 @@ if [[ "$os" == *"Ubuntu"* ]]; then
 elif [[ "$os" == *"MANJARO"* ]]; then
   echo "DISTRO: MANJARO"
 
-  echo "Updating the system..."
-  sudo pacman -Syy
-
   echo "Installing ansible..."
-  sudo pacman -S ansible --noconfirm
+  sudo pacman -Syy yay git ansible --noconfirm
 
-  echo "Checking the presence of required variables..."
-  [ -z "$USERNAME" ] && echo "USERNAME variable must be present" && exit -1
-  [ -z "$EMAIL" ] && echo "EMAIL variable must be present" && exit -1
+  read -p "Type the user name: " user_name
+  read -p "Type the email: " email
+
+  # echo "Checking the presence of required variables..."
+  # [ -z "$USERNAME" ] && echo "USERNAME variable must be present" && exit -1
+  # [ -z "$EMAIL" ] && echo "EMAIL variable must be present" && exit -1
 
   echo "Provisioning the workstation with Ansible..."
-  ansible-playbook ./ansible/playbook.yml --extra-vars="user_name=$USERNAME user_email=$EMAIL" --ask-become-pass
+  ansible-playbook ./ansible/playbook.yml --extra-vars="user_name=${user_name} user_email=${email}" --ask-become-pass
 
 else
   echo "Distro not configured: $os"
