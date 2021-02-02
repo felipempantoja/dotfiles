@@ -8,3 +8,9 @@
   tags:
     - aur
     - comms
+
+- name: Installing Telegram desktop
+  package:
+    name: 'telegram-desktop'
+    state: present
+  become: true

@@ -3,5 +3,6 @@
   roles:
     - { role: base, tags: ['base'] }
     - { role: browsers, tags: ['browsers'] }
+    - { role: communication, tags: ['communication'] }
+    - { role: development, tags: ['development'] }
     - { role: editors, tags: ['editors'] }
-    - { role: comms, tags: ['comms'] }

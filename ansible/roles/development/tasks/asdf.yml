@@ -1,0 +1,12 @@
+---
+- name: Installing asdf
+  git:
+    repo: 'https://github.com/asdf-vm/asdf.git'
+    dest: '/home/{{ user_name }}/.asdf'
+    version: v0.8.0
+
+- name: Adding Node.js ASDF Plugin
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add nodejs'
+
+- name: Importing Node.js release team's OpenPGP keys
+  shell: 'bash /home/{{ user_name }}/.asdf/plugins/nodejs/bin/import-release-team-keyring'
