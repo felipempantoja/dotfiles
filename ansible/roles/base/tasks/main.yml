@@ -1,7 +1,7 @@
 ---
 - include: zsh.yml
 - include: snap.yml
-- include: dot-files.yml
+# - include: dot-files.yml
 
 - name: Install Utils
   pacman:
