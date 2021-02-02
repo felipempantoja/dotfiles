@@ -1,6 +1,6 @@
 ---
 - name: Install editors
-  pacman:
+  package:
     name: '{{ editors }}'
     state: present
   become: yes
@@ -15,7 +15,7 @@
   failed_when: install_result.rc != 0 and install_result.rc != 255
   tags:
     - aur
-    - editors_aur
+    - editors
 # - name: Setup default Git configuration
 #   git_config: name="{{ item.name }}"
 #     scope=global

@@ -1,34 +1,24 @@
 ---
-- include: zsh.yml
-- include: snap.yml
-# - include: dot-files.yml
+# yay is required on top of this file in order to be used for installing AUR packages
+- include: yay.yml
 
-- name: Install Utils
-  pacman:
-    name: '{{ utils }}'
+- name: Install Base packages
+  package:
+    name: '{{ base }}'
     state: present
   become: yes
+  tags:
+    - base
 
-- name: Install Utils from Arch User Repository
+- name: Install Base packages from AUR
   script: ../../../scripts/install-aur.sh {{ item }}
-  with_items: '{{ utils_aur }}'
+  with_items: '{{ base_aur }}'
   register: install_result
   changed_when: install_result.rc == 0
   failed_when: install_result.rc != 0 and install_result.rc != 255
   tags:
     - aur
-
-- name: Custom Fonts
-  package:
-    name: ['ttf-fira-code', 'ttf-jetbrains-mono']
-    state: present
-  become: true
-
-- name: CLI Utils
-  package:
-    name: ['ripgrep', 'tmux', 'inotify-tools', 'htop', 'pass']
-    state: present
-  become: true
+    - base
 
 - name: Creates Workspace directory
   file:
@@ -36,3 +26,7 @@
     state: directory
   become_user: '{{ user_name }}'
   become: yes
+
+- include: zsh.yml
+- include: snap.yml
+# - include: dot-files.yml

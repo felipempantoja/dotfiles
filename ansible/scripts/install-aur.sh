@@ -1,33 +1,35 @@
 #!/bin/bash
 
-set -x
+yay -S ${1} --noconfirm
 
-searchQuery=${1}
-if [ ! -z "${2}" ]; then
-  searchQuery="${1} ${2}"
-fi
+# set -x
 
-searchResult=`pacman -Q | grep "$searchQuery"`
+# searchQuery=${1}
+# if [ ! -z "${2}" ]; then
+#   searchQuery="${1} ${2}"
+# fi
 
-# Only install if package does not exist
-if [ -z "${searchResult}" ]; then
-  echo "Installing"
-  echo "Download Arch linux AUR package"
-  wget https://aur.archlinux.org/cgit/aur.git/snapshot/${1}.tar.gz -P /tmp/${1}
+# searchResult=`pacman -Q | grep "$searchQuery"`
 
-  echo "Extract package"
-  tar -xvzf /tmp/${1}/${1}.tar.gz -C /tmp/${1}/
+# # Only install if package does not exist
+# if [ -z "${searchResult}" ]; then
+#   echo "Installing"
+#   echo "Download Arch linux AUR package"
+#   wget https://aur.archlinux.org/cgit/aur.git/snapshot/${1}.tar.gz -P /tmp/${1}
 
-  echo "Create install package"
-  cd /tmp/${1}/${1}
-  makepkg -s --skippgpcheck
+#   echo "Extract package"
+#   tar -xvzf /tmp/${1}/${1}.tar.gz -C /tmp/${1}/
 
-  echo "Install package"
-  sudo pacman -U *xz --noconfirm
+#   echo "Create install package"
+#   cd /tmp/${1}/${1}
+#   makepkg -s --skippgpcheck
 
-  echo "Remove temporary folder"
-  rm -rf /tmp/${1}
-else
-  echo "${searchQuery} package already installed"
-  exit -1;
-fi
+#   echo "Install package"
+#   sudo pacman -U *xz --noconfirm
+
+#   echo "Remove temporary folder"
+#   rm -rf /tmp/${1}
+# else
+#   echo "${searchQuery} package already installed"
+#   exit -1;
+# fi

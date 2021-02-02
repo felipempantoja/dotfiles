@@ -1,6 +1,12 @@
 ---
+- name: Install Development Apps
+  package:
+    name: '{{ development_apps }}'
+    state: present
+  become: true
+  tags:
+    - development
+    - apps
+
 - include: asdf.yml
 - include: docker.yml
-# - name: Development tools
-#   package:
-#     name: ['jq']

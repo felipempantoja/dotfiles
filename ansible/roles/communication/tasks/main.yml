@@ -1,16 +1,17 @@
 ---
-- name: Install communication/instant messenger apps from Arch User Repository
+- name: Install Communication packages
+  package:
+    name: '{{ item }}'
+    with_items: '{{ communication }}'
+    state: present
+  become: true
+
+- name: Install Communication packages from AUR
   script: ../../../scripts/install-aur.sh {{ item }}
-  with_items: '{{ comms_aur }}'
+  with_items: '{{ communication_aur }}'
   register: install_result
   changed_when: install_result.rc == 0
   failed_when: install_result.rc != 0 and install_result.rc != 255
   tags:
     - aur
-    - comms
-
-- name: Installing Telegram desktop
-  package:
-    name: 'telegram-desktop'
-    state: present
-  become: true
+    - communication

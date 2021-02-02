@@ -1,6 +1,6 @@
 ---
-- name: Install browsers from Arch User Repository
-  shell: 'yay -S {{ item }} --noconfirm'
+- name: Install Browsers packages from AUR
+  script: ../../../scripts/install-aur.sh {{ item }}
   with_items: '{{ browsers_aur }}'
   register: install_result
   changed_when: install_result.rc == 0

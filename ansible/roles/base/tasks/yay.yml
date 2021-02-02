@@ -1,0 +1,6 @@
+---
+- name: Install Yay - AUR Helper used to install AUR packages
+  package:
+    name: 'yay'
+    state: present
+  become: yes

@@ -1,3 +1,18 @@
+base
+    - alacritty
+    - binutils
+    - gcc
+    - htop
+    - inotify-tools
+    - pass
+    - ripgrep
+    - tmux
+    - tree
+
+base_aur:
+    - git-extras
+    - mkpasswd
+
 browsers_aur:
     - google-chrome
 
@@ -5,9 +20,29 @@ cloud_tools_aur:
     - aws
     - google-cloud-sdk
 
-developer_stack:
+communication
+    - telegram-desktop
+
+communication_aur:
+    - slack-desktop
+
+development_apps:
     - docker
     - docker-compose
+
+development_asdf_plugins:
+    - nodejs
+    - bat
+    - java
+    - maven
+    - ruby
+    - yarn
+    - neovim
+    - neovim
+    - tmux
+
+development_asdf_keyring:
+     -nodejs
 
 editors:
     - vim
@@ -17,18 +52,11 @@ editors_aur:
     - vim
     - visual-studio-code-bin
 
-media:
-    - peek
+multimedia_apps:
+    - flameshot
     - gimp
+    - peek
 
-utils:
-    - binutils
-    - gcc
-    - tree
-
-utils_aur:
-    - mkpasswd
-    - git-extras
-
-comms_aur:
-    - slack-desktop
+multimedia_fonts:
+    - ttf-fira-code
+    - ttf-jetbrains-mono

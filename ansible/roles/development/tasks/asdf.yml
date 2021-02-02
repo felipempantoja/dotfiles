@@ -5,41 +5,15 @@
     dest: '/home/{{ user_name }}/.asdf'
     version: v0.8.0
 
-- name: Adding Node.js ASDF Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add nodejs'
+- name: Adding Asdf Plugins
+  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add {{ item }}'
+  with_items: '{{ development_asdf_plugins }}'
   ignore_errors: yes
 
-- name: Importing Node.js release team's OpenPGP keys
-  shell: 'bash -c /home/{{ user_name }}/.asdf/plugins/nodejs/bin/import-release-team-keyring'
+- name: Importing release team's OpenPGP keys
+  shell: 'bash -c /home/{{ user_name }}/.asdf/plugins/{{ item }}/bin/import-release-team-keyring'
+  with_items: '{{ development_asdf_keyring }}'
   ignore_errors: yes
 
-- name: Adding Bat Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add bat'
-  ignore_errors: yes
-
-- name: Adding Java Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add java'
-  ignore_errors: yes
-
-- name: Adding Maven Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add maven'
-  ignore_errors: yes
-
-- name: Adding Ruby Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add ruby'
-  ignore_errors: yes
-
-- name: Adding Yarn Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add yarn'
-  ignore_errors: yes
-
-- name: Adding neovim Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add neovim'
-  ignore_errors: yes
-
-- name: Adding Tmux Plugin
-  shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf plugin-add tmux'
-  ignore_errors: yes
-
-- name: Installing apps from Asdf Plugins
+- name: Installing apps from Asdf Plugins based on ~/.tool-versions file
   shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf install'

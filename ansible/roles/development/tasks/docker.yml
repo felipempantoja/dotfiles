@@ -1,11 +1,4 @@
 ---
-- name: Installing Docker and docker-compose
-  pacman:
-    name: docker docker-compose
-    state: present
-  become: true
-  ignore_errors: yes
-
 - name: 'Adding user to docker group'
   user:
     name: '{{ user_name }}'
