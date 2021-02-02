@@ -1,4 +1,4 @@
-base
+base:
     - alacritty
     - binutils
     - gcc
@@ -31,15 +31,14 @@ development_apps:
     - docker-compose
 
 development_asdf_plugins:
-    - nodejs
     - bat
     - java
     - maven
+    - neovim
+    - nodejs
     - ruby
-    - yarn
-    - neovim
-    - neovim
     - tmux
+    - yarn
 
 development_asdf_keyring:
      -nodejs
