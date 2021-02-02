@@ -1,10 +1,11 @@
 ---
 - name: Install Communication packages
   package:
-    name: '{{ item }}'
-    with_items: '{{ communication }}'
+    name: '{{ communication }}'
     state: present
-  become: true
+  become: yes
+  tags:
+    - communication
 
 - name: Install Communication packages from AUR
   script: ../../../scripts/install-aur.sh {{ item }}
