@@ -16,3 +16,13 @@
   tags:
     - multimedia
     - fonts
+
+- name: Install Multimedia Fonts from AUR
+  package:
+    name: '{{ multimedia_fonts_aur }}'
+    state: present
+  become: yes
+  tags:
+    - aur
+    - multimedia
+    - fonts
