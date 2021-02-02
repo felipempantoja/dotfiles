@@ -20,7 +20,7 @@ cloud_tools_aur:
     - aws
     - google-cloud-sdk
 
-communication
+communication:
     - telegram-desktop
 
 communication_aur:
