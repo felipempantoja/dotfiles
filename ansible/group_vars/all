@@ -54,7 +54,7 @@ editors:
 
 editors_aur:
     - intellij-idea-ultimate-edition
-    - vim
+    - neovim
     - visual-studio-code-bin
 
 multimedia_apps:
