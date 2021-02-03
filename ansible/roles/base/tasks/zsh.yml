@@ -14,6 +14,13 @@
   tags:
     - zsh
 
+- name: Install Powerlevel10k Theme
+  git:
+    repo: 'https://github.com/romkatv/powerlevel10k.git'
+    dest: '/home/{{ user_name }}/powerlevel10k'
+    depth: '1'
+  tags: zsh
+
 - name: Install Oh My Zsh Plugins
   git:
     repo: '{{ item }}'
