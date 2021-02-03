@@ -17,23 +17,12 @@
     - multimedia
     - fonts
 
-- name: Install Multimedia Fonts from AUR
-  script: ../../../scripts/install-aur.sh {{ item }}
-  with_items: '{{ multimedia_fonts_aur }}'
-  register: install_result
-  changed_when: install_result.rc == 0
-  failed_when: install_result.rc != 0 and install_result.rc != 255
-  tags:
-    - aur
-    - multimedia
-    - fonts
-
 - name: Install Multimedia TTF Fonts from Url
   get_url:
     url: '{{ item }}'
     dest: '/usr/share/fonts/TTF'
     mode: '600'
-  with_items: '{{ multimedia_fonts_git }}'
+  with_items: '{{ multimedia_fonts_url }}'
   tags:
     - git
     - multimedia
