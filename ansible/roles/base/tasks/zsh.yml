@@ -14,6 +14,12 @@
   tags:
     - zsh
 
+- name: Install Oh My Zsh Plugins
+  git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+    dest: '/home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+  tags: zsh
+
 - name: Set Zsh as default shell
   user:
     name: '{{ user_name }}'

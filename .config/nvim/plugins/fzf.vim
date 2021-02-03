@@ -46,14 +46,14 @@ let g:fzf_colors =
 
 "Get Files
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--inline-info']}, 'right:50%', '?'), <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--inline-info']}, 'right:50%', '|'), <bang>0)
 
 " Make Ripgrep ONLY search file contents and not filenames
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   "rg --column --line-number --hidden -g '!./undo/**' -g '!.git/**' -g '!tags' --smart-case --no-heading --color=always ".shellescape(<q-args>), 1,
       \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-      \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '?'),
+      \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '|'),
       \   <bang>0)
 
 " Ripgrep advanced
