@@ -22,7 +22,9 @@
     url: '{{ item }}'
     dest: '/home/{{ user_name }}/.local/share/fonts'
     mode: '600'
+    owner: '{{ user_name }}'
   with_items: '{{ multimedia_fonts_url }}'
+  become: yes
   tags:
     - git
     - multimedia
