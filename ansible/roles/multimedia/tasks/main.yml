@@ -17,10 +17,10 @@
     - multimedia
     - fonts
 
-- name: Install Multimedia TTF Fonts from Url
+- name: Install Multimedia Fonts from Url
   get_url:
     url: '{{ item }}'
-    dest: '/usr/share/fonts/TTF'
+    dest: '/home/{{ user_name }}/.local/share/fonts'
     mode: '600'
   with_items: '{{ multimedia_fonts_url }}'
   tags:
