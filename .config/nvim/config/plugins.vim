@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'enricobacis/vim-airline-clock' " for showing time on the airline status bar
   Plug 'lambdalisue/battery.vim' " for showing battery percentage on the status bar
-  Plug 'christianchiarulli/nvcode.vim'
+  Plug 'christianchiarulli/nvcode-color-schemes.vim'
   Plug 'psliwka/vim-smoothie' " Smooth scrolling
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'ryanoasis/vim-devicons'
