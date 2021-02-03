@@ -12,6 +12,7 @@ base:
 base_aur:
     - git-extras
     - mkpasswd
+    - fzf
 
 base_omzsh_plugins:
     - https://github.com/zsh-users/zsh-autosuggestions
