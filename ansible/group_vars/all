@@ -13,6 +13,11 @@ base_aur:
     - git-extras
     - mkpasswd
 
+base_omzsh_plugins:
+    - https://github.com/zsh-users/zsh-autosuggestions
+    - https://github.com/zsh-users/zsh-syntax-highlighting
+    - https://github.com/djui/alias-tips
+
 browsers_aur:
     - google-chrome
 

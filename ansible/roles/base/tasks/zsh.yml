@@ -16,8 +16,9 @@
 
 - name: Install Oh My Zsh Plugins
   git:
-    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
-    dest: '/home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+    repo: '{{ item }}'
+    dest: '/home/{{ user_name }}/.oh-my-zsh/custom/plugins/{{ item.split("/") | last }}'
+  with_items: '{{ base_omzsh_plugins }}'
   tags: zsh
 
 - name: Set Zsh as default shell
