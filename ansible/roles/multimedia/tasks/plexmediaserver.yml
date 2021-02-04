@@ -15,16 +15,8 @@
     enabled: yes
 
 # still need to store preconfigured settings
-- name: Install plexmediaserver plugins
+- name: Prepare to install plexmediaserver plugins
   block:
-    - name: Download plexmediaserver plugins
-      get_url:
-        url: '{{ item }}'
-        dest: '/home/{{ user_name }}/plex-plugins-tmp'
-        mode: '777'
-      with_items: '{{ multimedia_plexmediaserver_plugins }}'
-      register: zip_files
-
     - name: Create the destination path for the plexmediaserver plugins
       file:
         path: '/home/{{ user_name }}/{{ item }}'
@@ -36,6 +28,14 @@
             '/plex-plugins-tmp',
             '/Library/Application Support/Plex Media Server/Plug-ins',
           ]
+
+    - name: Download plexmediaserver plugins as zip files
+      get_url:
+        url: '{{ item }}'
+        dest: '/home/{{ user_name }}/plex-plugins-tmp'
+        mode: '777'
+      with_items: '{{ multimedia_plexmediaserver_plugins }}'
+      register: zip_files
 
     - name: Extract plexmediaserver plugins zip files into Plugins folder
       unarchive:
