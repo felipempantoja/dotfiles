@@ -1,0 +1,16 @@
+# still need to store preconfigured settings
+- name: Install Transmission from AUR
+  script: ../../../scripts/install-aur.sh transmission-remote-gui
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  tags:
+    - aur
+    - multimedia
+    - transmission
+
+- name: Ensure Transmission is up
+  service:
+    name: transmission
+    state: started
+    enabled: yes

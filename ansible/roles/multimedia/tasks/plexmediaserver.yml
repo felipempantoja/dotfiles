@@ -1,0 +1,28 @@
+- name: Install plexmediaserver from AUR
+  script: ../../../scripts/install-aur.sh plex-media-server
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  tags:
+    - aur
+    - multimedia
+    - plexmediaserver
+
+- name: Ensure plexmediaserver is up
+  service:
+    name: plexmediaserver
+    state: started
+    enabled: yes
+
+# still need to store preconfigured settings
+- name: Install plexmediaserver plugins
+  get_url:
+    url: '{{ item }}'
+    dest: '/home/{{ user_name }}/Library/Application Support/Plex Media Server/Plug-ins'
+    mode: '777'
+  with_items: '{{ multimedia_plexmediaserver_plugins }}'
+
+- name: Restart plexmediaserver service
+  ansible.builtin.service:
+    name: plexmediaserver
+    state: restarted
