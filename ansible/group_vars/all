@@ -4,6 +4,7 @@ base:
     - gcc
     - htop
     - inotify-tools
+    - ncdu
     - pass
     - ripgrep
     - tmux
@@ -47,7 +48,7 @@ development_asdf_plugins:
     - yarn
 
 development_asdf_keyring:
-     -nodejs
+     - nodejs
 
 editors:
     - vim
@@ -73,3 +74,6 @@ multimedia_fonts_url:
     - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
     - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf
     - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+
+multimedia_plexmediaserver_plugins:
+    - https://github.com/pannal/Sub-Zero.bundle/releases/download/2.6.5.3247/Sub-Zero.bundle-2.6.5.3247.zip

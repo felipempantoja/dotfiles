@@ -34,3 +34,6 @@
     - git
     - multimedia
     - fonts
+
+- include: plexmediaserver.yml
+- include: transmission.yml
