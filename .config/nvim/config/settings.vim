@@ -47,8 +47,6 @@ set t_ut=                               " fixes transparent BG on tmux
 
 set colorcolumn=130                     " draws a vertical line for delimiting suggestion
 
-colorscheme onedark
-
 " undo
 set undolevels=300                      " how many undos
 set undoreload=3000                     " number of lines to save for undo

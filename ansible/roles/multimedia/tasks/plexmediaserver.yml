@@ -10,19 +10,41 @@
 
 - name: Ensure plexmediaserver is up
   service:
-    name: plexmediaserver
+    name: plexmediaserver.service
     state: started
     enabled: yes
 
 # still need to store preconfigured settings
 - name: Install plexmediaserver plugins
-  get_url:
-    url: '{{ item }}'
-    dest: '/home/{{ user_name }}/Library/Application Support/Plex Media Server/Plug-ins'
-    mode: '777'
-  with_items: '{{ multimedia_plexmediaserver_plugins }}'
+  block:
+    - name: Download plexmediaserver plugins
+      get_url:
+        url: '{{ item }}'
+        dest: '/home/{{ user_name }}/plex-plugins-tmp'
+        mode: '777'
+      with_items: '{{ multimedia_plexmediaserver_plugins }}'
+      register: zip_files
+
+    - name: Create the destination path for the plexmediaserver plugins
+      file:
+        path: '/home/{{ user_name }}/{{ item }}'
+        state: directory
+        recurse: yes
+        mode: '777'
+      with_items:
+        - [
+            '/plex-plugins-tmp',
+            '/Library/Application Support/Plex Media Server/Plug-ins',
+          ]
+
+    - name: Extract plexmediaserver plugins zip files into Plugins folder
+      unarchive:
+        src: '/home/{{ user_name }}/plex-plugins-tmp/{{ item }}'
+        dest: '/home/{{ user_name }}/Library/Application Support/Plex Media Server/Plug-ins'
+        copy: no
+      with_items: '{{ zip_files.stdout }}'
 
 - name: Restart plexmediaserver service
   ansible.builtin.service:
-    name: plexmediaserver
+    name: plexmediaserver.service
     state: restarted

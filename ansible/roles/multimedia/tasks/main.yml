@@ -19,7 +19,7 @@
 
 - name: Install Multimedia Fonts from Url
   block:
-    - name: Create the destination path if it does not exist
+    - name: Create the destination path for the fonts
       file:
         path: '/home/{{ user_name }}/.local/share/fonts'
         state: directory
