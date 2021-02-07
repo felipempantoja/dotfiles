@@ -8,5 +8,15 @@
     - development
     - apps
 
+- name: Install Development Apps packages from AUR
+  script: ../../../scripts/install-aur.sh {{ item }}
+  with_items: '{{ development_apps_aur }}'
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  tags:
+    - aur
+    - development
+
 - include: asdf.yml
 - include: docker.yml

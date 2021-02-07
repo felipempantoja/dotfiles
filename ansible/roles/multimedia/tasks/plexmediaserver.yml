@@ -7,12 +7,15 @@
     - aur
     - multimedia
     - plexmediaserver
+  when: install_plex | bool
 
 - name: Ensure plexmediaserver is up
   service:
     name: plexmediaserver.service
     state: started
     enabled: yes
+  become: yes
+  when: install_plex | bool
 
 # still need to store preconfigured settings
 - name: Prepare to install plexmediaserver plugins
@@ -39,12 +42,20 @@
 
     - name: Extract plexmediaserver plugins zip files into Plugins folder
       unarchive:
-        src: '/home/{{ user_name }}/plex-plugins-tmp/{{ item }}'
+        src: '{{ item }}'
         dest: '/home/{{ user_name }}/Library/Application Support/Plex Media Server/Plug-ins'
         copy: no
-      with_items: '{{ zip_files.stdout }}'
+      with_fileglob: '/home/{{ user_name }}/plex-plugins-tmp/*.zip'
+
+    - name: Remove plexmediaserver plugins temporary files
+      file:
+        state: absent
+        path: '/home/{{ user_name }}/plex-plugins-tmp'
+  when: install_plex | bool
 
 - name: Restart plexmediaserver service
-  ansible.builtin.service:
+  service:
     name: plexmediaserver.service
     state: restarted
+  become: yes
+  when: install_plex | bool

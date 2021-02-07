@@ -1,5 +1,37 @@
 ---
 - hosts: localhost
+  vars_prompt:
+    - name: user_name
+      prompt: 'SO Username'
+      private: no
+
+    - name: email
+      prompt: 'Git Email'
+      private: no
+
+    - name: transmission_download_dir
+      prompt: 'Transmission Download Directory'
+      private: no
+
+    - name: transmission_username
+      prompt: 'Transmission Username'
+      private: no
+
+    - name: transmission_password
+      prompt: 'Transmission Password'
+
+    - name: transmission_whitelist
+      prompt: 'Transmission Whitelist'
+      private: no
+
+    - name: install_plex
+      prompt: 'Install Plex (yes|no)'
+      private: no
+
+    - name: plex_user
+      prompt: 'Plex user'
+      private: no
+
   roles:
     - { role: base, tags: ['base'] }
     - { role: browsers, tags: ['browsers'] }

@@ -42,7 +42,12 @@ because it includes powerful features, such as:
 
 ## Inspirations
 
+- [PauloPortual/manjaro-playbook](https://github.com/PauloPortugal/manjaro-playbook)
 - [ChristianChiarulli/nvim](https://github.com/ChristianChiarulli/nvim)
 - [gacha/vim-tiny](https://github.com/gacha/vim-tiny)
 - [DarthNyan Gists](https://gist.github.com/DarthNyan)
 - [mlaursen/vim-react-snippets](https://github.com/mlaursen/vim-react-snippets)
+
+## Roadmap
+- [ ] Use custom templates for more personal config files (e.g. .gitconfig, transmission.conf)
+- [ ] Make playbook multi-distros (at least manjaro and ubuntu/debian)

@@ -5,15 +5,21 @@ base:
     - htop
     - inotify-tools
     - ncdu
+    - ntfs-3g
     - pass
+    - powertop
+    - ranger
     - ripgrep
+    - testdisk
+    - tldr
     - tmux
     - tree
 
 base_aur:
+    - fzf
     - git-extras
     - mkpasswd
-    - fzf
+    - undistract-me
 
 base_omzsh_plugins:
     - https://github.com/zsh-users/zsh-autosuggestions
@@ -23,19 +29,24 @@ base_omzsh_plugins:
 browsers_aur:
     - google-chrome
 
-cloud_tools_aur:
-    - aws
-    - google-cloud-sdk
-
 communication:
     - telegram-desktop
 
 communication_aur:
     - slack-desktop
+    - whatsdesk-bin
+
+desktop_xfce_removable_files:
+    - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
 development_apps:
     - docker
     - docker-compose
+    - jq
+
+development_apps_aur:
+    - postman-bin
+    - tig
 
 development_asdf_plugins:
     - bat
@@ -64,6 +75,7 @@ multimedia_apps:
     - peek
 
 multimedia_fonts:
+    - noto-fonts-emoji
     - ttf-fira-code
     - ttf-jetbrains-mono
 

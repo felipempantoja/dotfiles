@@ -2,6 +2,10 @@
 # yay is required on top of this file in order to be used for installing AUR packages
 - include: yay.yml
 
+- name: Print variables
+  ansible.builtin.debug:
+    msg: distro {{ ansible_distribution }} of family {{ ansible_distribution_version }}
+
 - name: Install Base packages
   package:
     name: '{{ base }}'

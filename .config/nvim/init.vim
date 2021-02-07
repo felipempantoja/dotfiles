@@ -32,6 +32,7 @@ source $HOME/.config/nvim/plugins/undotree.vim
 source $HOME/.config/nvim/plugins/close-buffers.vim
 source $HOME/.config/nvim/plugins/highlightedyank.vim
 source $HOME/.config/nvim/plugins/editorconfig.vim
+source $HOME/.config/nvim/plugins/ranger.vim
 
 " evaluation
 " source $HOME/.config/nvim/plugins/expand-region.vim

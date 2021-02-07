@@ -1,0 +1,22 @@
+---
+- name: Create Ranger devicons plugins folder
+  file:
+    path: '/home/{{ user_name }}/.config/ranger/plugins'
+    state: directory
+    recurse: yes
+    mode: '777'
+
+- name: Install Ranger devicons plugin
+  git:
+    repo: 'https://github.com/alexanderjeurissen/ranger_devicons'
+    dest: '/home/{{ user_name }}/.config/ranger/plugins/ranger_devicons'
+    depth: '1'
+  tags:
+    - base
+    - ranger
+
+- name: Install Ueberzug for Image preview in Ranger
+  script: ../../../scripts/install-aur.sh python-ueberzug-git
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255

@@ -67,6 +67,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'voldikss/vim-floaterm' " builtin terminal in a popup window
   Plug 'airblade/vim-rooter' " Changes Vim working directory to project root
   Plug 'Asheq/close-buffers.vim' " allows deleting buffer but one and more"
+  Plug 'francoiscabrol/ranger.vim' " Ranger Explorer integration
+  Plug 'rbgrouleff/bclose.vim' " Ranger plugin dependency
 
   " evaluation
   " Plug 'moll/vim-bbye' " allows you to do delete buffers (close files) without closing your windows or messing up your layout

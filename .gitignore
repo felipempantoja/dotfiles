@@ -9,6 +9,9 @@
 # ansible playbooks
 !ansible/
 
+# ranger
+!.config/ranger/rc.conf
+
 # neovim
 !.config/nvim/UltiSnips/
 !.config/nvim/autoload/

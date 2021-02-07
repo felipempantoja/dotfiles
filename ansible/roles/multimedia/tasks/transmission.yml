@@ -1,6 +1,5 @@
-# still need to store preconfigured settings
 - name: Install Transmission from AUR
-  script: ../../../scripts/install-aur.sh transmission-remote-gui
+  script: ../../../scripts/install-aur.sh transmission-cli
   register: install_result
   changed_when: install_result.rc == 0
   failed_when: install_result.rc != 0 and install_result.rc != 255
@@ -9,8 +8,31 @@
     - multimedia
     - transmission
 
+- name: Create the destination path for the Transmission Settings
+  file:
+    path: '/var/lib/transmission/.config/transmission-daemon'
+    state: directory
+    recurse: yes
+    mode: '777'
+  become: yes
+
+- name: Stop Transmission if it exists
+  service:
+    name: transmission.service
+    state: stopped
+    enabled: no
+  become: yes
+  ignore_errors: yes
+
+- name: Apply Transmission Settings from Template
+  template:
+    src: files/transmission-settings.j2
+    dest: /var/lib/transmission/.config/transmission-daemon/settings.json
+  become: yes
+
 - name: Ensure Transmission is up
   service:
-    name: transmission
+    name: transmission.service
     state: started
     enabled: yes
+  become: yes
