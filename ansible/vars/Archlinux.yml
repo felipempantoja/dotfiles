@@ -1,5 +1,4 @@
 base_aur:
-  - fzf
   - git-extras
   - mkpasswd
   - undistract-me

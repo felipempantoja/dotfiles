@@ -23,4 +23,5 @@
     - base
 
 - include: zsh.yml
+- include: ranger.yml
 # - include: snap.yml

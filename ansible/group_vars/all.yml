@@ -1,6 +1,7 @@
 base:
   - alacritty
   - binutils
+  - fzf
   - gcc
   - htop
   - inotify-tools

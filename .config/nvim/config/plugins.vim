@@ -66,12 +66,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'liuchengxu/vim-which-key' " a keymapping help panel
   Plug 'voldikss/vim-floaterm' " builtin terminal in a popup window
   Plug 'airblade/vim-rooter' " Changes Vim working directory to project root
-  Plug 'Asheq/close-buffers.vim' " allows deleting buffer but one and more"
+  Plug 'moll/vim-bbye' " allows you to do delete buffers (close files) without closing your windows or messing up your layout
   Plug 'francoiscabrol/ranger.vim' " Ranger Explorer integration
   Plug 'rbgrouleff/bclose.vim' " Ranger plugin dependency
 
   " evaluation
-  " Plug 'moll/vim-bbye' " allows you to do delete buffers (close files) without closing your windows or messing up your layout
+  " Plug 'Asheq/close-buffers.vim' " allows deleting buffer but one and more
   " Plug 'Yggdroot/indentLine' " for displaying thin vertical lines at each indentation level for code (json view conflicts)
   " Plug 'puremourning/vimspector' " multi language graphical debugger
   " Plug 'terryma/vim-expand-region' " visually select increasingly larger regions of text
