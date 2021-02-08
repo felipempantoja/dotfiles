@@ -29,34 +29,13 @@ plugins=(
 	docker-compose
 	tmux
 	fzf
-  alias-tips
+	alias-tips
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # make cd command needless
 setopt auto_cd
-
-# aliases
-
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-
-alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
-alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
-
-alias tig='/home/pantoja/.bin/tig'
-
-alias hoverfly='/home/pantoja/.bin/hoverfly'
-alias hoverctl='/home/pantoja/.bin/hoverctl'
-
-alias tx="tmuxinator"
-alias txe="tmuxinator e $1"
-alias txs='f(){ tmuxinator s "$@" ${PWD##*/}; unset -f f; }; f'
-alias txsr="tmuxinator s rails ${PWD##*/}"
-
-alias precommit-add-git-script="ln -s ~/workspace/utils/git_hooks/pre-commit .git/hooks"
-
 
 # asdf configs
 
