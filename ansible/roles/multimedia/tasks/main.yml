@@ -27,6 +27,7 @@
         dest: '/home/{{ user_name }}/.local/share/fonts'
         mode: '600'
       with_items: '{{ multimedia_fonts_url }}'
+  when: multimedia_fonts is defined
   tags:
     - multimedia
     - fonts

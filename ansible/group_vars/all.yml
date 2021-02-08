@@ -50,11 +50,6 @@ multimedia_apps:
   - gimp
   - peek
 
-multimedia_fonts:
-  - noto-fonts-emoji
-  - ttf-fira-code
-  - ttf-jetbrains-mono
-
 multimedia_fonts_url:
   - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
   - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf

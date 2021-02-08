@@ -19,7 +19,15 @@
     repo: '{{ item }}'
     dest: '/home/{{ user_name }}/.oh-my-zsh/custom/plugins/{{ item.split("/") | last }}'
   with_items: '{{ base_omzsh_plugins }}'
+  ignore_errors: yes
   tags: zsh
+
+- name: Set Oh My Zsh Plugins Permissions
+  file:
+    path: '/home/{{ user_name }}/.oh-my-zsh/custom/plugins'
+    state: directory
+    recurse: yes
+    mode: '700'
 
 - name: Set Zsh as default shell
   user:

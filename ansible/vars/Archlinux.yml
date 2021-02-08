@@ -17,5 +17,9 @@ development_apps_aur:
 
 editors_aur:
   - intellij-idea-ultimate-edition
-  - neovim
   - visual-studio-code-bin
+
+multimedia_fonts:
+  - noto-fonts-emoji
+  - ttf-fira-code
+  - ttf-jetbrains-mono
