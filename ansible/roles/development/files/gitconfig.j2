@@ -1,0 +1,17 @@
+{% for git_identity in git.identities %}
+[user]
+  name = {{ git.name }}
+  email = {{ git_identity.email }}
+{% endfor %}
+
+[core]
+  editor = nvim
+  autocrlf = input
+[pager]
+  branch = false
+[credential]
+  helper = store
+[push]
+  default = current
+[alias]
+  pushd = push -u origin HEAD

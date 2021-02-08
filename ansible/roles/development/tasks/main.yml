@@ -1,4 +1,10 @@
 ---
+- include_vars: /home/{{ user_name }}/ansible-local-vars.yml
+
+- name: Generate SSH Keys based on Git Identities
+  shell: 'ssh-keygen -t ed25519 -C "{{ item }}" -f /home/{{ user_name }}/.ssh/{{ item.id }}_id_ed25519 -q -N ""'
+  with_items: '{{ git.identities }}'
+
 - name: Install Development Apps
   package:
     name: '{{ development_apps }}'
@@ -17,6 +23,14 @@
   tags:
     - aur
     - development
+
+- name: Build .gitconfig from Template
+  template:
+    src: files/gitconfig.j2
+    dest: /home/{{ user_name }}/.gitconfig
+  tags:
+    - development
+    - git
 
 - include: asdf.yml
 - include: docker.yml

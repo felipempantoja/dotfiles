@@ -27,9 +27,6 @@
 # yadm bootstrap file for auto executing after git checkout
 !.config/yadm/bootstrap
 
-# git personal configs
-!.gitconfig
-
 # this very file
 !.gitignore
 
