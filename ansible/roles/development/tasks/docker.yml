@@ -6,3 +6,6 @@
     append: yes
   become: true
   ignore_errors: yes
+  tags:
+    - development
+    - docker

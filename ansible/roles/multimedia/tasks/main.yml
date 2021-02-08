@@ -9,31 +9,30 @@
     - apps
 
 - name: Install Multimedia Fonts
-  package:
-    name: '{{ multimedia_fonts }}'
-    state: present
-  become: yes
-  tags:
-    - multimedia
-    - fonts
-
-- name: Install Multimedia Fonts from Url
   block:
-    - name: Create the destination path for the fonts
+    - name: Install fonts from package manager
+      package:
+        name: '{{ multimedia_fonts }}'
+        state: present
+      become: yes
+
+    - name: Create destination path for manual installation of fonts
       file:
         path: '/home/{{ user_name }}/.local/share/fonts'
         state: directory
 
-    - name: Download the fonts
+    - name: Download and manual install fonts
       get_url:
         url: '{{ item }}'
         dest: '/home/{{ user_name }}/.local/share/fonts'
         mode: '600'
       with_items: '{{ multimedia_fonts_url }}'
   tags:
-    - git
     - multimedia
     - fonts
 
 - include: plexmediaserver.yml
+  when: plex.install | default(false) | bool
+
 - include: transmission.yml
+  when: transmission.download_dir is defined

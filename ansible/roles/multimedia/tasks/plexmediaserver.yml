@@ -7,7 +7,7 @@
     - aur
     - multimedia
     - plexmediaserver
-  when: install_plex | bool
+  when: plex.install | default('false') | bool
 
 - name: Ensure plexmediaserver is up
   service:
@@ -15,7 +15,6 @@
     state: started
     enabled: yes
   become: yes
-  when: install_plex | bool
 
 # still need to store preconfigured settings
 - name: Prepare to install plexmediaserver plugins
@@ -51,11 +50,9 @@
       file:
         state: absent
         path: '/home/{{ user_name }}/plex-plugins-tmp'
-  when: install_plex | bool
 
 - name: Restart plexmediaserver service
   service:
     name: plexmediaserver.service
     state: restarted
   become: yes
-  when: install_plex | bool

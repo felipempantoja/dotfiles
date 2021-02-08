@@ -1,0 +1,21 @@
+base_aur:
+  - fzf
+  - git-extras
+  - mkpasswd
+  - undistract-me
+
+browsers_aur:
+  - google-chrome
+
+communication_aur:
+  - slack-desktop
+  - whatsdesk-bin
+
+development_apps_aur:
+  - postman-bin
+  - tig
+
+editors_aur:
+  - intellij-idea-ultimate-edition
+  - neovim
+  - visual-studio-code-bin

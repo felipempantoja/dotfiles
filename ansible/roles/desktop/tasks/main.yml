@@ -1,16 +1,6 @@
 ---
-# think a better way for switching from desktop environment A or B
-
-- name: Remove Manjaro config files from Ubuntu
+- name: Remove unused config files (e.g. other OS's configs)
   file:
     path: '/home/{{ user_name }}/{{ item }}'
     state: absent
-  with_items: '{{ desktop_manjaro_removable_files }}'
-  when: ansible_distribution == 'Ubuntu'
-
-- name: Remove Ubuntu config files from Manjaro
-  file:
-    path: '/home/{{ user_name }}/{{ item }}'
-    state: absent
-  with_items: '{{ desktop_ubuntu_removable_files }}'
-  when: ansible_distribution == 'Manjaro Linux'
+  with_items: '{{ desktop_removable_files }}'

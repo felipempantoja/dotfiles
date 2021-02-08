@@ -2,8 +2,12 @@
 - hosts: localhost
   vars_prompt:
     - name: user_name
-      prompt: 'SO Username'
+      prompt: 'username'
       private: no
+
+  vars_files:
+    - 'vars/{{ ansible_distribution }}.yml'
+    - '/home/{{ user_name }}/ansible-local-vars.yml'
 
   roles:
     - { role: base, tags: ['base'] }

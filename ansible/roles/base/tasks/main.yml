@@ -1,10 +1,7 @@
 ---
 # yay is required on top of this file in order to be used for installing AUR packages
 - include: yay.yml
-
-- name: Print variables
-  ansible.builtin.debug:
-    msg: distro {{ ansible_distribution }} of family {{ ansible_distribution_version }}
+  when: ansible_distribution == 'Archlinux'
 
 - name: Install Base packages
   package:
@@ -24,13 +21,5 @@
     - aur
     - base
 
-- name: Creates Workspace directory
-  file:
-    path: /home/{{ user_name }}/workspace
-    state: directory
-  become_user: '{{ user_name }}'
-  become: yes
-
 - include: zsh.yml
-- include: snap.yml
-# - include: dot-files.yml
+# - include: snap.yml
