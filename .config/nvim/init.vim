@@ -29,13 +29,13 @@ source $HOME/.config/nvim/plugins/limelight.vim
 source $HOME/.config/nvim/plugins/illuminate.vim
 source $HOME/.config/nvim/plugins/rooter.vim
 source $HOME/.config/nvim/plugins/undotree.vim
-source $HOME/.config/nvim/plugins/close-buffers.vim
+source $HOME/.config/nvim/plugins/bbye.vim
 source $HOME/.config/nvim/plugins/highlightedyank.vim
 source $HOME/.config/nvim/plugins/editorconfig.vim
 source $HOME/.config/nvim/plugins/ranger.vim
 
 " evaluation
+" source $HOME/.config/nvim/plugins/close-buffers.vim
 " source $HOME/.config/nvim/plugins/expand-region.vim
 " source $HOME/.config/nvim/plugins/blamer.vim
 " source $HOME/.config/nvim/plugins/indentline.vim
-" source $HOME/.config/nvim/plugins/bbye.vim
