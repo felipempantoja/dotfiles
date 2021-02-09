@@ -74,3 +74,21 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+
+# aliases
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
+alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
+
+# deprecated
+alias tx="tmuxinator"
+alias txe="tmuxinator e $1"
+alias txs='f(){ tmuxinator s "$@" ${PWD##*/}; unset -f f; }; f'
+alias txsr="tmuxinator s rails ${PWD##*/}"
+
+# Git Pre-Commit hook for Ruby (using rubocop)
+alias gpcr="wget -O .git/hooks/pre-commit https://raw.githubusercontent.com/felipempantoja/utils/main/git/ruby-pre-commit"
