@@ -19,3 +19,4 @@
 
 - name: Reload Tmux configuration
   shell: 'tmux source-file /home/{{ user_name }}/.tmux.conf'
+  ignore_errors: yes

@@ -36,3 +36,8 @@
   become: true
   tags:
     - zsh
+
+- name: Reload Zsh Configurations
+  command: "/bin/zsh -c 'source /home/{{ user_name }}/{{ item }}'"
+  with_items:
+    - ['.zshrc', '.zsh_aliases']

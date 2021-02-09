@@ -4,6 +4,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 
+# deprecated
 alias tx="tmuxinator"
 alias txe="tmuxinator e $1"
 alias txs='f(){ tmuxinator s "$@" ${PWD##*/}; unset -f f; }; f'
