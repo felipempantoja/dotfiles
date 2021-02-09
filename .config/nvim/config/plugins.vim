@@ -69,6 +69,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Asheq/close-buffers.vim' " allows deleting buffer but one and more"
   Plug 'francoiscabrol/ranger.vim' " Ranger Explorer integration
   Plug 'rbgrouleff/bclose.vim' " Ranger plugin dependency
+  Plug 'tmux-plugins/vim-tmux-focus-events' " Make terminal vim and tmux work better together
 
   " evaluation
   " Plug 'moll/vim-bbye' " allows you to do delete buffers (close files) without closing your windows or messing up your layout

@@ -40,8 +40,7 @@
 !.tool-versions
 
 # tmux configs
-!.tmux/.tmux.conf
-!.tmux.conf
+!.tmux.conf.local
 
 # zshell configs
 !.zshrc

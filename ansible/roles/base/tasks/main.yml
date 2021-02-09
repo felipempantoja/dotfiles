@@ -23,4 +23,5 @@
     - base
 
 - include: zsh.yml
+- include: tmux.yml
 # - include: snap.yml
