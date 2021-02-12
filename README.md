@@ -49,5 +49,6 @@ because it includes powerful features, such as:
 - [mlaursen/vim-react-snippets](https://github.com/mlaursen/vim-react-snippets)
 
 ## Roadmap
-- [ ] Use custom templates for more personal config files (e.g. .gitconfig, transmission.conf)
-- [ ] Make playbook multi-distros (at least manjaro and ubuntu/debian)
+
+- [ ] autoload vscode plugins and personal configs from gist
+- [ ] samba configuration
