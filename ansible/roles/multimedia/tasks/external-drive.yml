@@ -1,0 +1,14 @@
+- name: Create "pantoja-cloud" directory
+  file:
+    path: /mnt/pantoja-cloud
+    state: directory
+  become: yes
+
+- name: Mount External Drive "pantoja-cloud"
+  mount:
+    path: /mnt/pantoja-cloud
+    src: UUID={{ external_drive.uuid }}
+    fstype: ntfs
+    opts: defaults,nofail 0 0
+    state: mounted
+  become: yes

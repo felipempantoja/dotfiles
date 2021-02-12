@@ -19,37 +19,29 @@
 # still need to store preconfigured settings
 - name: Prepare to install plexmediaserver plugins
   block:
-    - name: Create the destination path for the plexmediaserver plugins
-      file:
-        path: '/home/{{ user_name }}/{{ item }}'
-        state: directory
-        recurse: yes
-        mode: '777'
-      with_items:
-        - [
-            '/plex-plugins-tmp',
-            '/Library/Application Support/Plex Media Server/Plug-ins',
-          ]
-
     - name: Download plexmediaserver plugins as zip files
       get_url:
         url: '{{ item }}'
-        dest: '/home/{{ user_name }}/plex-plugins-tmp'
+        dest: '{{ plex.path }}/Plug-ins'
         mode: '777'
       with_items: '{{ multimedia_plexmediaserver_plugins }}'
       register: zip_files
+      become: yes
 
     - name: Extract plexmediaserver plugins zip files into Plugins folder
       unarchive:
         src: '{{ item }}'
-        dest: '/home/{{ user_name }}/Library/Application Support/Plex Media Server/Plug-ins'
+        dest: '{{ plex.path }}/Plug-ins'
         copy: no
-      with_fileglob: '/home/{{ user_name }}/plex-plugins-tmp/*.zip'
+      with_fileglob: '{{ plex.path }}/Plug-ins/*.zip'
+      become: yes
 
     - name: Remove plexmediaserver plugins temporary files
       file:
         state: absent
-        path: '/home/{{ user_name }}/plex-plugins-tmp'
+        path: '{{ item }}'
+      with_fileglob: '{{ plex.path }}/Plug-ins/*.zip'
+      become: yes
 
 - name: Restart plexmediaserver service
   service:

@@ -32,8 +32,11 @@
     - multimedia
     - fonts
 
+- include: external-drive.yml
+  when: external_drive.uuid is defined
+
 - include: plexmediaserver.yml
-  when: plex.install | default(false) | bool
+  when: plex.path is defined
 
 - include: transmission.yml
   when: transmission.download_dir is defined
