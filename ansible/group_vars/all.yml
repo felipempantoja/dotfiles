@@ -61,3 +61,6 @@ multimedia_fonts_url:
 
 multimedia_plexmediaserver_plugins:
   - https://github.com/pannal/Sub-Zero.bundle/releases/download/2.6.5.3247/Sub-Zero.bundle-2.6.5.3247.zip
+
+network:
+  - samba

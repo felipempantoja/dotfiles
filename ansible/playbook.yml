@@ -16,3 +16,4 @@
     - { role: development, tags: ['development'] }
     - { role: editors, tags: ['editors'] }
     - { role: multimedia, tags: ['multimedia'] }
+    - { role: network, tags: ['network'] }
