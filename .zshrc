@@ -81,6 +81,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+alias __='sudo -E env "PATH=$PATH"'
+
 alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 

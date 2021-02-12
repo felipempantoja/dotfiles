@@ -1,10 +1,7 @@
 base:
   - alacritty
-  - binutils
   - fzf
-  - gcc
   - htop
-  - inotify-tools
   - ncdu
   - ntfs-3g
   - pass
