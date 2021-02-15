@@ -4,3 +4,13 @@
     path: '/home/{{ user_name }}/{{ item }}'
     state: absent
   with_items: '{{ desktop_removable_files }}'
+
+# ref: https://github.com/archkiss/Arch-Linux-Tips-And-Tricks
+- name: Apply Manjaro Customizations in pacman.conf file
+  shell: "sed -i 's/{{ item }}/g' /etc/pacman.conf"
+  with_items: ['#Color/Color', 'VerbosePkgLists/VerbosePkgLists\nILoveCandy']
+  become: yes
+
+- include: ranger.yml
+- include: tmux.yml
+- include: zsh.yml

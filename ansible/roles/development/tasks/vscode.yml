@@ -1,0 +1,6 @@
+---
+- name: Install vscode Settings Sync extension (assumes vscode is already installed)
+  shell: 'code --install-extension Shan.code-settings-sync'
+  tags:
+    - development
+    - vscode

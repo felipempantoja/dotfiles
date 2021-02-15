@@ -30,3 +30,4 @@
 - include: asdf.yml
 - include: docker.yml
 - include: git.yml
+- include: vscode.yml

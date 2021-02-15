@@ -21,7 +21,3 @@
   tags:
     - aur
     - base
-
-- include: zsh.yml
-- include: tmux.yml
-- include: ranger.yml
