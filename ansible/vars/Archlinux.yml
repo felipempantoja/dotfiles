@@ -22,3 +22,6 @@ multimedia_fonts:
   - noto-fonts-emoji
   - ttf-fira-code
   - ttf-jetbrains-mono
+
+multimedia_apps_aur:
+  - tautulli

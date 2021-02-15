@@ -51,4 +51,4 @@ because it includes powerful features, such as:
 ## Roadmap
 
 - [ ] autoload vscode plugins and personal configs from gist
-- [ ] samba configuration
+- [ ] personalize pacman (ilovecandy and color): https://github.com/archkiss/Arch-Linux-Tips-And-Tricks

@@ -46,7 +46,10 @@ editors:
 multimedia_apps:
   - flameshot
   - gimp
+    # striping metadata usage: $ mkvpropedit movie.mkv --tags all:
+  - mkvtoolnix-cli
   - peek
+  - perl-image-exiftool
 
 multimedia_fonts_url:
   - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf

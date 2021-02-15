@@ -1,0 +1,17 @@
+---
+- name: Build samba.conf from Template
+  template:
+    src: files/smb.conf.j2
+    dest: /etc/samba/smb.conf
+  become: yes
+  tags:
+    - network
+
+- name: Make sure smb and nmb are running
+  systemd:
+    name: '{{ item }}.service'
+    enabled: yes
+  with_items: ['smb', 'nmb']
+  become: yes
+  tags:
+    - network

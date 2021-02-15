@@ -1,0 +1,10 @@
+---
+- name: Install Network Apps
+  package:
+    name: '{{ network }}'
+    state: present
+  become: true
+  tags:
+    - network
+
+- include: samba.yml

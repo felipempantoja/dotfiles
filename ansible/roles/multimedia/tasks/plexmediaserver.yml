@@ -16,7 +16,6 @@
     enabled: yes
   become: yes
 
-# still need to store preconfigured settings
 - name: Prepare to install plexmediaserver plugins
   block:
     - name: Download plexmediaserver plugins as zip files

@@ -8,6 +8,17 @@
     - multimedia
     - apps
 
+- name: Install Multimedia Apps packages from AUR
+  script: ../../../scripts/install-aur.sh {{ item }}
+  with_items: '{{ multimedia_apps_aur }}'
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  when: ansible_distribution == 'Archlinux'
+  tags:
+    - aur
+    - multimedia
+
 - name: Install Multimedia Fonts
   block:
     - name: Install fonts from package manager

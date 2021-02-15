@@ -1,0 +1,5 @@
+- name: Download plexmediaserver plugins as zip files
+  get_url:
+    url: 'https://exiftool.org/Image-ExifTool-12.18.tar.gz'
+    dest: '/home/{{ user_name }}'
+    mode: '777'
