@@ -7,6 +7,7 @@ base:
   - pass
   - powertop
   - ranger
+  - renameutils
   - ripgrep
   - testdisk
   - tldr
