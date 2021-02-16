@@ -34,7 +34,10 @@ samba:
       guest_ok: yes|no
       create_mask: 0777
       directory_mask: 0777
-      force_user: linux_user
+      force_user: samba_user
+  users:
+    - username: samba_user
+      password: 123456
 
 # this must be defined if you want to have transmission installed in your host
 # otherwise, just get rid of it.

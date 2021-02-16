@@ -1,7 +1,7 @@
 ---
 - name: Build samba.conf from Template
   template:
-    src: files/smb.conf.j2
+    src: etc/samba/smb.conf.j2
     dest: /etc/samba/smb.conf
   become: yes
   tags:
@@ -15,3 +15,8 @@
   become: yes
   tags:
     - network
+
+- name: Create samba users
+  shell: '(echo {{ item.password }}; echo {{ item.password }}) | smbpasswd -s -a {{ item.username }}'
+  become: yes
+  with_items: '{{ samba.users }}'

@@ -26,7 +26,7 @@
 
 - name: Apply Transmission Settings from Template
   template:
-    src: files/transmission-settings.j2
+    src: var/lib/transmission/.config/transmission-daemon/settings.json.j2
     dest: /var/lib/transmission/.config/transmission-daemon/settings.json
   become: yes
 

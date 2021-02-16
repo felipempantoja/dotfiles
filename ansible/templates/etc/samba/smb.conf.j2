@@ -1,0 +1,10 @@
+{% for sharing in samba.sharings %}
+  [{{ sharing.id }}]
+  comment = {{ sharing.id }}
+  path = "{{ sharing.path }}"
+  writeable = {{ sharing.writeable }}
+  guest ok = {{ sharing.guest_ok}}
+  create mask = {{ sharing.create_mask }}
+  directory mask = {{ sharing.directory_mask}}
+  force user = {{ sharing.force_user }}
+{% endfor %}

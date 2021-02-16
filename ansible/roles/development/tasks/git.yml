@@ -5,7 +5,7 @@
 
 - name: Build .gitconfig from Template
   template:
-    src: files/gitconfig.j2
+    src: home/user/.gitconfig.j2
     dest: /home/{{ user_name }}/.gitconfig
   tags:
     - development
