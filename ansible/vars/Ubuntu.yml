@@ -3,6 +3,11 @@ desktop_removable_files:
 
 base_distro:
   - speed-test
+  # vtop is not available in apt neither snap package managers (try using npm instead)
+  # - vtop
+
+browsers:
+  - google-chrome-stable
 
 network_distro:
   - openssh-server

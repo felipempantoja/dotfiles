@@ -14,6 +14,7 @@
   register: install_result
   changed_when: install_result.rc == 0
   failed_when: install_result.rc != 0 and install_result.rc != 255
+  when: multimedia_apps_distro is defined
   tags:
     - distro
     - multimedia

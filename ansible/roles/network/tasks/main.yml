@@ -11,4 +11,6 @@
     - network
 
 - include: samba.yml
+  when: samba is defined
+
 - include: ssh.yml

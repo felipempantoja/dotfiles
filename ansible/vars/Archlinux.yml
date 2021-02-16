@@ -29,6 +29,9 @@ multimedia_apps_distro:
   - plex-media-server
   - tautulli
   - transmission-cli
+    # striping metadata usage: $ mkvpropedit movie.mkv --tags all:
+  - mkvtoolnix-cli
+  - perl-image-exiftool
 
 network_distro:
   - openssh

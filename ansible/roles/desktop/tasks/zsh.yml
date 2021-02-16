@@ -18,7 +18,7 @@
   git:
     repo: '{{ item }}'
     dest: '/home/{{ user_name }}/.oh-my-zsh/custom/plugins/{{ item.split("/") | last }}'
-  with_items: '{{ base_omzsh_plugins }}'
+  with_items: '{{ desktop_omyzsh_plugins }}'
   ignore_errors: yes
   tags: zsh
 

@@ -13,6 +13,7 @@
   register: install_result
   changed_when: install_result.rc == 0
   failed_when: install_result.rc != 0 and install_result.rc != 255
+  when: editors_distro is defined
   tags:
     - distro
     - base

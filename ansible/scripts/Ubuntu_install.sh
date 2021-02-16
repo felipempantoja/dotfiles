@@ -1,3 +1,3 @@
 #!/bin/bash
 
-snap install ${1}
+sudo snap install ${1}
