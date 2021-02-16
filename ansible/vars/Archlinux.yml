@@ -1,20 +1,22 @@
-base_aur:
+base_distro:
   - git-extras
   - mkpasswd
+  - speed-test
   - undistract-me
+  - vtop
 
-browsers_aur:
+browsers_distro:
   - google-chrome
 
-communication_aur:
+communication_distro:
   - slack-desktop
   - whatsdesk-bin
 
-development_apps_aur:
+development_apps_distro:
   - postman-bin
   - tig
 
-editors_aur:
+editors_distro:
   - intellij-idea-ultimate-edition
   - visual-studio-code-bin
 
@@ -23,8 +25,10 @@ multimedia_fonts:
   - ttf-fira-code
   - ttf-jetbrains-mono
 
-multimedia_apps_aur:
+multimedia_apps_distro:
+  - plex-media-server
   - tautulli
+  - transmission-cli
 
 network_distro:
   - openssh

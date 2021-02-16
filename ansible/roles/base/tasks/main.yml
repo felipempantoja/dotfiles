@@ -11,13 +11,12 @@
   tags:
     - base
 
-- name: Install Base packages from AUR
-  script: ../../../scripts/install-aur.sh {{ item }}
-  with_items: '{{ base_aur }}'
+- name: Install Base packages from Distro Package Manager
+  script: ../../../scripts/{{ ansible_distribution }}_install.sh {{ item }}
+  with_items: '{{ base_distro }}'
   register: install_result
   changed_when: install_result.rc == 0
   failed_when: install_result.rc != 0 and install_result.rc != 255
-  when: ansible_distribution == 'Archlinux'
   tags:
-    - aur
+    - distro
     - base
