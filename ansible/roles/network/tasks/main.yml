@@ -1,10 +1,14 @@
 ---
 - name: Install Network Apps
   package:
-    name: '{{ network }}'
+    name: '{{ item }}'
     state: present
+  with_together:
+    - '{{ network }}'
+    - '{{ network_distro }}'
   become: true
   tags:
     - network
 
 - include: samba.yml
+- include: ssh.yml

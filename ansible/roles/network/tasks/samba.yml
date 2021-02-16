@@ -10,6 +10,7 @@
 - name: Make sure smb and nmb are running
   systemd:
     name: '{{ item }}.service'
+    state: started
     enabled: yes
   with_items: ['smb', 'nmb']
   become: yes

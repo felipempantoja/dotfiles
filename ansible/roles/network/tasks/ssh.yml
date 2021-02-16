@@ -1,0 +1,9 @@
+---
+- name: Make sure openssh is running
+  systemd:
+    name: 'sshd.service'
+    state: started
+    enabled: yes
+  become: yes
+  tags:
+    - network

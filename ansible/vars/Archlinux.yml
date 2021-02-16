@@ -25,3 +25,6 @@ multimedia_fonts:
 
 multimedia_apps_aur:
   - tautulli
+
+network_distro:
+  - openssh
