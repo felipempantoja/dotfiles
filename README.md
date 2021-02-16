@@ -50,5 +50,6 @@ because it includes powerful features, such as:
 
 ## Roadmap
 
-- [ ] autoload vscode plugins and personal configs from gist
-- [ ] personalize pacman (ilovecandy and color): https://github.com/archkiss/Arch-Linux-Tips-And-Tricks
+- [x] autoload vscode plugins and personal configs from gist
+- [x] personalize pacman (ilovecandy and color): https://github.com/archkiss/Arch-Linux-Tips-And-Tricks
+- [ ] Smart separation of specific distro stuff and general stuff

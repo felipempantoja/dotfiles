@@ -6,7 +6,9 @@
       private: no
 
   vars_files:
+    # distro specific data dynamically load
     - 'vars/{{ ansible_distribution }}.yml'
+    # ansible-local-vars should not be versioned as it stores my personal information
     - '/home/{{ user_name }}/ansible-local-vars.yml'
 
   roles:
