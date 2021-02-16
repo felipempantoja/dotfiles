@@ -83,6 +83,8 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias __='sudo -E env "PATH=$PATH"'
 
+alias mva='qmv -f do'
+
 alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 
