@@ -9,3 +9,10 @@
   tags:
     - development
     - docker
+
+- name: Ensure docker is up
+  service:
+    name: docker.service
+    state: started
+    enabled: yes
+  become: yes

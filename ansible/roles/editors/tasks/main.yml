@@ -16,4 +16,4 @@
   when: editors_distro is defined
   tags:
     - distro
-    - base
+    - editors

@@ -1,5 +1,6 @@
 base:
   - alacritty
+  - exa
   - fzf
   - htop
   - ncdu
@@ -10,6 +11,7 @@ base:
   - renameutils
   - ripgrep
   - testdisk
+  - thefuck
   - tldr
   - tmux
   - tree

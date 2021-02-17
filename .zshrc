@@ -88,6 +88,8 @@ alias rename='qmv -f do'
 alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 
+eval $(thefuck --alias)
+
 # deprecated
 alias tx="tmuxinator"
 alias txe="tmuxinator e $1"

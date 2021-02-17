@@ -4,6 +4,7 @@
     name: '{{ browsers }}'
     state: present
   become: yes
+  when: browsers is defined
   tags:
     - browser
 

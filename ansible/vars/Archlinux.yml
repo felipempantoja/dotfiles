@@ -1,6 +1,9 @@
 base_distro:
+  - dockly
   - git-extras
+  - lazydocker
   - mkpasswd
+  - ngrok
   - speed-test
   - undistract-me
   - vtop
@@ -17,7 +20,7 @@ development_apps_distro:
   - tig
 
 editors_distro:
-  - intellij-idea-ultimate-edition
+  - intellij-idea-community-edition
   - visual-studio-code-bin
 
 multimedia_fonts:
