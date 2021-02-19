@@ -1,14 +1,12 @@
 ---
-- name: Install Network Apps
-  package:
-    name: '{{ item }}'
-    state: present
-  with_together:
-    - '{{ network }}'
-    - '{{ network_distro }}'
-  become: true
-  tags:
-    - network
+- name: Install Network packages
+  include_tasks: ../../install_packages_template.yml
+  vars:
+    tag: network
+    packages: network
+    packages_distro: network_distro
+    packages_snap: network_snap
+    packages_yay: network_yay
 
 - include: samba.yml
   when: samba is defined

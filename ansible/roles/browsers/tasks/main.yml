@@ -1,20 +1,9 @@
 ---
-- name: Install Communication packages
-  package:
-    name: '{{ browsers }}'
-    state: present
-  become: yes
-  when: browsers is defined
-  tags:
-    - browser
-
-- name: Install browser apps from Distro Package Manager
-  script: ../../../scripts/{{ ansible_distribution }}_install.sh {{ item }}
-  with_items: '{{ browsers_distro }}'
-  register: install_result
-  changed_when: install_result.rc == 0
-  failed_when: install_result.rc != 0 and install_result.rc != 255
-  when: browsers_distro is defined
-  tags:
-    - distro
-    - browser
+- name: Install Browsers packages
+  include_tasks: ../../install_packages_template.yml
+  vars:
+    tag: browsers
+    packages: browsers
+    packages_distro: browsers_distro
+    packages_snap: browsers_snap
+    packages_yay: browsers_yay

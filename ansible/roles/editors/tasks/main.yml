@@ -1,19 +1,9 @@
 ---
-- name: Install editors
-  package:
-    name: '{{ editors }}'
-    state: present
-  become: yes
-  tags:
-    - editors
-
-- name: Install editors from Distro Package Manager
-  script: ../../../scripts/{{ ansible_distribution }}_install.sh {{ item }}
-  with_items: '{{ editors_distro }}'
-  register: install_result
-  changed_when: install_result.rc == 0
-  failed_when: install_result.rc != 0 and install_result.rc != 255
-  when: editors_distro is defined
-  tags:
-    - distro
-    - editors
+- name: Install Editors packages
+  include_tasks: ../../install_packages_template.yml
+  vars:
+    tag: editors
+    packages: editors
+    packages_distro: editors_distro
+    packages_snap: editors_snap
+    packages_yay: editors_yay

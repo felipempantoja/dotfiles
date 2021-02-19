@@ -9,6 +9,7 @@
 - name: Apply Manjaro Customizations in pacman.conf file
   shell: "sed -i 's/{{ item }}/g' /etc/pacman.conf"
   with_items: ['#Color/Color', 'VerbosePkgLists/VerbosePkgLists\nILoveCandy']
+  when: ansible_distribution == 'Archlinux'
   become: yes
 
 - include: ranger.yml

@@ -2,9 +2,7 @@ desktop_removable_files:
   - .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
 base_distro:
-  - speed-test
-  # vtop is not available in apt neither snap package managers (try using npm instead)
-  # - vtop
+  - git-extras
 
 browsers:
   - google-chrome-stable

@@ -1,4 +1,9 @@
 base_distro:
+  - exa
+  - thefuck
+  - yay
+
+base_yay:
   - dockly
   - git-extras
   - lazydocker
@@ -8,18 +13,18 @@ base_distro:
   - undistract-me
   - vtop
 
-browsers_distro:
+browsers_yay:
   - google-chrome
 
-communication_distro:
+communication_yay:
   - slack-desktop
   - whatsdesk-bin
 
-development_apps_distro:
+development_yay:
   - postman-bin
   - tig
 
-editors_distro:
+editors_yay:
   - intellij-idea-community-edition
   - visual-studio-code-bin
 
@@ -28,7 +33,7 @@ multimedia_fonts:
   - ttf-fira-code
   - ttf-jetbrains-mono
 
-multimedia_apps_distro:
+multimedia_yay:
   - plex-media-server
   - tautulli
   - transmission-cli
@@ -36,5 +41,5 @@ multimedia_apps_distro:
   - mkvtoolnix-cli
   - perl-image-exiftool
 
-network_distro:
+network_yay:
   - openssh

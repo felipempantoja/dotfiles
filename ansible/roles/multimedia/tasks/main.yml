@@ -1,23 +1,12 @@
 ---
-- name: Install Multimedia Apps
-  package:
-    name: '{{ multimedia_apps }}'
-    state: present
-  become: yes
-  tags:
-    - multimedia
-    - apps
-
-- name: Install Multimedia Apps packages from Distro Package Manager
-  script: ../../../scripts/{{ ansible_distribution }}_install.sh {{ item }}
-  with_items: '{{ multimedia_apps_distro }}'
-  register: install_result
-  changed_when: install_result.rc == 0
-  failed_when: install_result.rc != 0 and install_result.rc != 255
-  when: multimedia_apps_distro is defined
-  tags:
-    - distro
-    - multimedia
+- name: Install Multimedia packages
+  include_tasks: ../../install_packages_template.yml
+  vars:
+    tag: multimedia
+    packages: multimedia
+    packages_distro: multimedia_distro
+    packages_snap: multimedia_snap
+    packages_yay: multimedia_yay
 
 - name: Install Multimedia Fonts
   block:
@@ -41,7 +30,6 @@
   when: multimedia_fonts is defined
   tags:
     - multimedia
-    - fonts
 
 - include: external-drive.yml
   when: external_drive.uuid is defined

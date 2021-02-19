@@ -1,0 +1,33 @@
+- name: Evaluate variables
+  set_fact:
+    packages_list: "{{ lookup('vars', packages, default=[]) }}"
+    packages_distro_list: "{{ lookup('vars', packages_distro, default=[]) }}"
+    packages_snap_list: "{{ lookup('vars', packages_snap, default=[]) }}"
+    packages_yay_list: "{{ lookup('vars', packages_yay, default=[]) }}"
+
+- name: Install {{ tag }} packages from standard package manager
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - '{{ packages_list | default([]) + packages_distro_list | default([]) }}'
+  become: yes
+  when: packages_list is defined or packages_distro_list is defined
+  tags:
+    - '{{ tag }}'
+
+- name: Install {{ tag }} packages from Snap
+  snap:
+    name: '{{ packages_snap_list }}'
+    state: present
+    classic: yes
+  when: packages_snap_list is defined
+  become: yes
+  tags:
+    - '{{ tag }}'
+
+- name: Install {{ tag }} packages from Yay AUR Helper (Archlinux only)
+  yay: name={{ packages_yay_list }} state=present
+  when: ansible_distribution == 'Archlinux' and packages_yay_list is defined
+  tags:
+    - '{{ tag }}'

@@ -1,4 +1,13 @@
 ---
+- name: Install Development packages
+  include_tasks: ../../install_packages_template.yml
+  vars:
+    tag: development
+    packages: development_apps
+    packages_distro: development_apps_distro
+    packages_snap: development_snap
+    packages_yay: development_yay
+
 - name: Creates Workspace directory
   file:
     path: /home/{{ user_name }}/workspace
@@ -6,26 +15,6 @@
   become_user: '{{ user_name }}'
   tags:
     - development
-    - workspace
-
-- name: Install Development Apps
-  package:
-    name: '{{ development_apps }}'
-    state: present
-  become: true
-  tags:
-    - development
-
-- name: Install development apps from Distro Package Manager
-  script: ../../../scripts/{{ ansible_distribution }}_install.sh {{ item }}
-  with_items: '{{ development_apps_distro }}'
-  register: install_result
-  changed_when: install_result.rc == 0
-  failed_when: install_result.rc != 0 and install_result.rc != 255
-  when: development_apps_distro is defined
-  tags:
-    - distro
-    - base
 
 - include: asdf.yml
 - include: docker.yml

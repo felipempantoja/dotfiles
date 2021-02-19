@@ -52,4 +52,5 @@ because it includes powerful features, such as:
 
 - [x] autoload vscode plugins and personal configs from gist
 - [x] personalize pacman (ilovecandy and color): https://github.com/archkiss/Arch-Linux-Tips-And-Tricks
-- [ ] Smart separation of specific distro stuff and general stuff
+- [x] Smart separation of specific distro stuff and general stuff
+- [ ] fix execution of base role twice (because it is a true role and also a dependency of all other roles)

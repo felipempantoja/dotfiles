@@ -1,6 +1,8 @@
+# all artifacts here must be cross OS
+# for OS centric artifacts use the file "var/{os_distribution}"
+
 base:
   - alacritty
-  - exa
   - fzf
   - htop
   - ncdu
@@ -11,11 +13,15 @@ base:
   - renameutils
   - ripgrep
   - testdisk
-  - thefuck
   - tldr
   - tmux
   - tree
   - zsh
+
+base_snap:
+  - speed-test
+  # vtop is not available in apt neither snap package managers (try using npm instead)
+  # - vtop
 
 communication:
   - telegram-desktop
