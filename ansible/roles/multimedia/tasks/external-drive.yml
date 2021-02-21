@@ -9,7 +9,7 @@
     path: '{{ external_drive.mount_point }}'
     src: UUID={{ external_drive.uuid }}
     fstype: '{{ external_drive.fstype }}'
-    opts: defaults,nofail 0 0
+    opts: defaults,nofail,x-systemd.device-timeout=5 0 2
     state: mounted
   become: yes
   ignore_errors: yes

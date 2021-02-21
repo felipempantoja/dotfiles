@@ -36,6 +36,8 @@ set signcolumn=yes                      " Always show the signcolumn, otherwise 
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
 
+set re=1                               " Enables the old vim regex engine, for the sake of performance
+
 set completeopt=noinsert,noselect,menuone
 
 set ignorecase                          " Ignore case on search
@@ -55,17 +57,8 @@ if has("persistent_undo")
   set undofile
 endif
 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" automatically set any ruby spec buffers to ruby filetype (somehow vim is not doing this by itself)
-au BufRead,BufNewFile *_spec.rb set filetype=ruby
-
 " You can't stop me
 cmap w!! w !sudo tee %
-
-" make vim see js(x) buffers as javascript.jsx file types
-autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
-autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
 " used to autoclose netrw after choosing the file within it
 let g:netrw_fastbrowse = 0

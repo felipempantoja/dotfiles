@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'christianchiarulli/nvcode-color-schemes.vim'
   Plug 'psliwka/vim-smoothie' " Smooth scrolling
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons' " icons for coc explorer and others
   Plug 'kien/rainbow_parentheses.vim' " for colorizing parentheses
   Plug 'junegunn/limelight.vim' " Hyperfocus-writing
   Plug 'RRethy/vim-illuminate' " highlighting other uses of the word under the cursor
@@ -34,7 +34,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-abolish' " word substitution/abbreviation
   Plug 'brooth/far.vim' " find and replace plugin
   Plug 'wellle/targets.vim' " additional text objects
-  Plug 'honza/vim-snippets' " self-explanatory
+  " Plug 'honza/vim-snippets' " self-explanatory
   Plug 'editorconfig/editorconfig-vim'
 
   " ruby / rails
@@ -46,7 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Frontend
   Plug 'leafgarland/typescript-vim' " will do all the coloring for typescript keyword
   Plug 'peitalin/vim-jsx-typescript' " will do all the coloring for jsx in the .tsx files
-  Plug 'mattn/emmet-vim' " self-explanatory
+  " Plug 'mattn/emmet-vim' " self-explanatory
   Plug 'alvan/vim-closetag' " self-explanatory
 
   " git integration
