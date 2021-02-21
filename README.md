@@ -53,4 +53,6 @@ because it includes powerful features, such as:
 - [x] autoload vscode plugins and personal configs from gist
 - [x] personalize pacman (ilovecandy and color): https://github.com/archkiss/Arch-Linux-Tips-And-Tricks
 - [x] Smart separation of specific distro stuff and general stuff
-- [ ] fix execution of base role twice (because it is a true role and also a dependency of all other roles)
+- [ ] ansible: fix execution of base role twice (because it is a true role and also a dependency of all other roles)
+- [ ] nvim: enable coc extensions only when the workspace needs them (attempt to improve performance)
+- [ ] nvim: try to get rid of ale plugin, since coc has already linter integration using LSP. Only Ruby is not fully integrated yet.
