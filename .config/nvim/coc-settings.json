@@ -10,7 +10,8 @@
     "html",
     "yaml",
     "json",
-    "java"
+    "java",
+    "ruby"
   ],
 
   "tsserver.formatOnType": true,
@@ -30,6 +31,11 @@
   "java.import.gradle.enabled": true,
   "java.import.gradle.wrapper.enabled": true,
   "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+
+  //  "solargraph.diagnostics": true, // not working with rubocop old configurations. needs double checking
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
 
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/UltiSnips"],
 

@@ -18,7 +18,6 @@ source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/floaterm.vim
 source $HOME/.config/nvim/plugins/fugitive.vim
 source $HOME/.config/nvim/plugins/gitgutter.vim
-source $HOME/.config/nvim/plugins/ale.vim
 source $HOME/.config/nvim/plugins/vim-test.vim
 source $HOME/.config/nvim/plugins/commentary.vim
 source $HOME/.config/nvim/plugins/endwise.vim
@@ -36,6 +35,7 @@ source $HOME/.config/nvim/plugins/editorconfig.vim
 source $HOME/.config/nvim/plugins/ranger.vim
 
 " evaluation
+" source $HOME/.config/nvim/plugins/ale.vim
 " source $HOME/.config/nvim/plugins/close-buffers.vim
 " source $HOME/.config/nvim/plugins/expand-region.vim
 " source $HOME/.config/nvim/plugins/blamer.vim

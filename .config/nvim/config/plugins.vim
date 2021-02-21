@@ -58,7 +58,7 @@ call plug#begin('~/.config/nvim/plugged')
   " language tools
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Stable version of coc
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " Keeping up to date with master
-  Plug 'w0rp/ale' " async lint engine
+  Plug 'w0rp/ale' " async lint engine (only for ruby usage since my coc config is not linting ruby files properly)
   Plug 'janko-m/vim-test' " for running tests
 
   " general
