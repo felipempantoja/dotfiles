@@ -1,6 +1,6 @@
-.DEFAULT_GOAL := install
+.DEFAULT_GOAL := provision
 
-install:
+provision:
 	@if test -f ~/ansible-local-vars.yml; then \
 		echo '*** Start provisioning your local workstation ***'; \
 		ansible-playbook ~/ansible/playbook.yml --ask-become-pass; \
