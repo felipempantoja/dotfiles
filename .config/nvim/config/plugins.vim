@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'lambdalisue/battery.vim' " for showing battery percentage on the status bar
   Plug 'christianchiarulli/nvcode-color-schemes.vim'
   Plug 'psliwka/vim-smoothie' " Smooth scrolling
-  Plug 'norcalli/nvim-colorizer.lua'
   Plug 'ryanoasis/vim-devicons' " icons for coc explorer and others
   Plug 'kien/rainbow_parentheses.vim' " for colorizing parentheses
   Plug 'junegunn/limelight.vim' " Hyperfocus-writing
@@ -72,6 +71,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tmux-plugins/vim-tmux-focus-events' " Make terminal vim and tmux work better together
 
   " evaluation
+  " Plug 'norcalli/nvim-colorizer.lua'
   " Plug 'Asheq/close-buffers.vim' " allows deleting buffer but one and more
   " Plug 'Yggdroot/indentLine' " for displaying thin vertical lines at each indentation level for code (json view conflicts)
   " Plug 'puremourning/vimspector' " multi language graphical debugger

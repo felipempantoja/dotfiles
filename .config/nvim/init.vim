@@ -5,7 +5,6 @@ source $HOME/.config/nvim/config/mappings.vim
 source $HOME/.config/nvim/config/autocommands.vim
 
 " themes
-source $HOME/.config/nvim/themes/syntax.vim
 source $HOME/.config/nvim/themes/nvcode.vim
 source $HOME/.config/nvim/themes/airline.vim
 
@@ -22,7 +21,6 @@ source $HOME/.config/nvim/plugins/vim-test.vim
 source $HOME/.config/nvim/plugins/commentary.vim
 source $HOME/.config/nvim/plugins/endwise.vim
 source $HOME/.config/nvim/plugins/closetag.vim
-luafile $HOME/.config/nvim/plugins/colorizer.lua
 source $HOME/.config/nvim/plugins/rainbow_parentheses.vim
 source $HOME/.config/nvim/plugins/goyo.vim
 source $HOME/.config/nvim/plugins/limelight.vim
@@ -35,6 +33,7 @@ source $HOME/.config/nvim/plugins/editorconfig.vim
 source $HOME/.config/nvim/plugins/ranger.vim
 
 " evaluation
+" luafile $HOME/.config/nvim/plugins/colorizer.lua
 " source $HOME/.config/nvim/plugins/ale.vim
 " source $HOME/.config/nvim/plugins/close-buffers.vim
 " source $HOME/.config/nvim/plugins/expand-region.vim
