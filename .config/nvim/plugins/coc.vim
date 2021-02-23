@@ -1,9 +1,6 @@
 let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-actions',
-    \ 'coc-sh',
-    \ 'coc-java-debug',
-    \ 'coc-java',
     \ 'coc-lists',
     \ 'coc-emmet',
     \ 'coc-pairs',
@@ -26,6 +23,8 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-styled-components',
     \ ]
+    " \ 'coc-sh',
+    " \ 'coc-import-cost'
     " \ 'coc-cssmodules',
     " \ 'coc-python',
     " \ 'coc-pyright',
@@ -39,6 +38,10 @@ endif
 " Adds coc-eslint only if project has prettier package within
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
+endif
+
+if isdirectory('./target') || isdirectory('./gradle')
+  let g:coc_global_extensions += ['coc-java', 'coc-java-debug']
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -64,6 +67,7 @@ nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>do <Plug>(coc-codeaction)
+nmap <silent>go <Plug>(coc-codelens-action)
 nmap <silent><leader>ac :execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent>[g <Plug>(coc-diagnostic-prev)
 nmap <silent>]g <Plug>(coc-diagnostic-next)
@@ -126,3 +130,6 @@ function! s:cocActionsOpenFromSelected(type) abort
 endfunction
 
 let g:EditorConfig_core_mode = 'external_command'
+
+" replace the codelens color for something less code-like
+hi CocCodeLens guifg=Gray

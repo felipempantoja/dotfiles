@@ -15,6 +15,7 @@ source $HOME/.config/nvim/plugins/startify.vim
 source $HOME/.config/nvim/plugins/easymotion.vim
 source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/floaterm.vim
+source $HOME/.config/nvim/plugins/far.vim
 source $HOME/.config/nvim/plugins/fugitive.vim
 source $HOME/.config/nvim/plugins/gitgutter.vim
 source $HOME/.config/nvim/plugins/vim-test.vim

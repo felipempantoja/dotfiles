@@ -14,9 +14,9 @@ let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
 " Execute actions before saving a session
 let g:startify_session_before_save = [
-      \ 'echo "Cleaning up before saving.."'
+      \ 'echo "Cleaning up before saving.."',
+      \ 'silent! bd! \[coc-explorer]'
       \ ]
-      " \ close explorer if it is opened
 
 " bookmarks
 let g:startify_bookmarks = [

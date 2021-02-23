@@ -49,6 +49,9 @@ set t_ut=                               " fixes transparent BG on tmux
 
 set colorcolumn=130                     " draws a vertical line for delimiting suggestion
 
+" ignores from searching/indexing by pattern
+set wildignore=*/node_modules/*,*/target/*,*/tmp/*
+
 " undo
 set undolevels=300                      " how many undos
 set undoreload=3000                     " number of lines to save for undo
