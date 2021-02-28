@@ -8,5 +8,5 @@ autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
 " open these files using external programs
-au BufReadCmd *.docx,*.xlsx,xls.*,*.pptx,*.pdf,*.png,*.jpg
+au BufReadCmd *.docx,*.xlsx,*.xls,*.pptx,*.pdf,*.png,*.jpg,*.gif
       \ call system("xdg-open " . expand("%:p")) | buffer# | bdelete# | redraw! | syntax on

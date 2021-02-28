@@ -16,11 +16,12 @@
 
   "codeLens.enable": true,
 
-  "tsserver.formatOnType": true,
-  "coc.preferences.formatOnType": true,
+  //"tsserver.formatOnType": true,
+  //"coc.preferences.formatOnType": true,
 
   "prettier.disableSuccessMessage": true,
   "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
 
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,

@@ -47,7 +47,7 @@ set guifont=JetBrainsMono\ Nerd\ Font   " Only GUI clients like Gvim or macvim u
 
 set t_ut=                               " fixes transparent BG on tmux
 
-set colorcolumn=130                     " draws a vertical line for delimiting suggestion
+set colorcolumn=120                     " draws a vertical line for delimiting suggestion
 
 " ignores from searching/indexing by pattern
 set wildignore=*/node_modules/*,*/target/*,*/tmp/*

@@ -23,12 +23,12 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-styled-components',
     \ ]
+    " \ 'coc-tabnine',
     " \ 'coc-sh',
     " \ 'coc-import-cost'
     " \ 'coc-cssmodules',
     " \ 'coc-python',
     " \ 'coc-pyright',
-    " \ 'coc-tabnine',
 
 " Adds coc-prettier only if project has prettier package within
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -132,4 +132,4 @@ endfunction
 let g:EditorConfig_core_mode = 'external_command'
 
 " replace the codelens color for something less code-like
-hi CocCodeLens guifg=Gray
+hi CocCodeLens guifg=#494737

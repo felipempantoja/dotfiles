@@ -5,5 +5,5 @@ nnoremap <silent> <C-f> :Farf<cr>
 vnoremap <silent> <C-f> :Farf<cr>
 
 " shortcut for far.vim replace
-nnoremap <silent> <C-r> :Farr<cr>
-vnoremap <silent> <C-r> :Farr<cr>
+" nnoremap <silent> <C-h> :Farr<cr>
+" vnoremap <silent> <C-h> :Farr<cr>
