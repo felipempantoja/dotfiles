@@ -43,7 +43,6 @@ development_asdf_plugins:
   - neovim
   - nodejs
   - ruby
-  - tmux
   - yarn
 
 development_asdf_keyring:
