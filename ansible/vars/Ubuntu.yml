@@ -3,6 +3,7 @@ desktop_removable_files:
 
 base_distro:
   - git-extras
+  - lm-sensors
 
 browsers:
   - google-chrome-stable

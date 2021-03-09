@@ -31,3 +31,12 @@
   when: ansible_distribution == 'Archlinux' and packages_yay_list is defined
   tags:
     - '{{ tag }}'
+
+- name: Install {{ tag }} global packages from Yarn Package
+  yarn:
+    name: '{{ packages_yarn_list }}'
+    global: yes
+    state: present
+  when: packages_yarn_list is defined
+  tags:
+    - '{{ tag }}'

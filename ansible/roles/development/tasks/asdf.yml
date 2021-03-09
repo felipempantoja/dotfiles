@@ -5,7 +5,6 @@
     dest: '/home/{{ user_name }}/.asdf'
     version: v0.8.0
   tags:
-    - asdf
     - development
 
 - name: Adding Asdf Plugins
@@ -13,7 +12,6 @@
   with_items: '{{ development_asdf_plugins }}'
   ignore_errors: yes
   tags:
-    - asdf
     - development
 
 - name: Importing release team's OpenPGP keys
@@ -21,11 +19,9 @@
   with_items: '{{ development_asdf_keyring }}'
   ignore_errors: yes
   tags:
-    - asdf
     - development
 
 - name: Installing apps from Asdf Plugins based on ~/.tool-versions file
   shell: 'bash /home/{{ user_name }}/.asdf/bin/asdf install'
   tags:
-    - asdf
     - development

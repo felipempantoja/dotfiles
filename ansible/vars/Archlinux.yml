@@ -1,5 +1,6 @@
 base_distro:
   - exa
+  - lm_sensors
   - thefuck
   - yay
 

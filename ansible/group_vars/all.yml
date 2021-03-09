@@ -23,6 +23,13 @@ base_snap:
   # vtop is not available in apt neither snap package managers (try using npm instead)
   # - vtop
 
+base_yarn:
+  - chalk
+  - http-server
+  - json-server
+  - node-inspector
+  - wikit
+
 communication:
   - telegram-desktop
 
