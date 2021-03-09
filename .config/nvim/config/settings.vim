@@ -38,6 +38,8 @@ set incsearch
 
 set re=1                               " Enables the old vim regex engine, for the sake of performance
 
+set relativenumber                     " turn relative line numbers on
+
 set completeopt=noinsert,noselect,menuone
 
 set ignorecase                          " Ignore case on search

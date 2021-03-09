@@ -29,9 +29,10 @@ let g:startify_bookmarks = [
 let g:startify_lists = [
       \ { 'type': 'sessions',  'header': ['   Sessions']                     },
       \ { 'type': 'files',     'header': ['   Files']                        },
-      \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
       \ ]
+      " commented because the current directory is never right (needs some investigation)
+      " \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
 
 " banner
 let g:startify_custom_header = [
