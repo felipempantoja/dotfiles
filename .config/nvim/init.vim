@@ -32,10 +32,10 @@ source $HOME/.config/nvim/plugins/bbye.vim
 source $HOME/.config/nvim/plugins/highlightedyank.vim
 source $HOME/.config/nvim/plugins/editorconfig.vim
 source $HOME/.config/nvim/plugins/ranger.vim
+source $HOME/.config/nvim/plugins/ale.vim
 
 " evaluation
 " luafile $HOME/.config/nvim/plugins/colorizer.lua
-" source $HOME/.config/nvim/plugins/ale.vim
 " source $HOME/.config/nvim/plugins/close-buffers.vim
 " source $HOME/.config/nvim/plugins/expand-region.vim
 " source $HOME/.config/nvim/plugins/blamer.vim
