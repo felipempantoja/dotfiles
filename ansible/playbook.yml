@@ -12,7 +12,7 @@
     - '/home/{{ user_name }}/ansible-local-vars.yml'
 
   roles:
-    - { role: base, tags: ['base'] }
+    # - { role: base, tags: ['base'] }
     - { role: browsers, tags: ['browsers'] }
     - { role: communication, tags: ['communication'] }
     - { role: development, tags: ['development'] }
