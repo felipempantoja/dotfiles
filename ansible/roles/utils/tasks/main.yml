@@ -1,0 +1,5 @@
+---
+- name: Install Utils packages
+  include_tasks: ../../install_packages_template.yml
+  vars:
+    tag: utils

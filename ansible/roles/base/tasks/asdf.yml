@@ -1,0 +1,60 @@
+---
+- name: Install Asdf
+  git:
+    repo: 'https://github.com/asdf-vm/asdf.git'
+    dest: '{{ home_dir }}/.asdf'
+    version: '{{ asdf.version }}'
+    force: yes
+
+# - name: Add Asdf to shell
+#   shell: 'echo ". {{ home_dir }}/.asdf/asdf.sh" >> {{ home_dir }}/.bashrc'
+
+# - name: Reload Bashrc
+#   shell: 'source {{ home_dir }}/.bashrc'
+#   args:
+#     executable: /bin/bash
+#   tags:
+#     - base
+
+# - name: gett
+#   shell: 'echo $PATH'
+#   register: path_var
+
+# - name: debugging
+#   debug:
+#     msg: "'{{ path_var.stdout }}' is the PATH environment variable."
+
+- name: Get the list of Asdf installed packages
+  shell: '{{ home_dir }}/.asdf/bin/asdf list'
+  changed_when: false # ignores idempotency test phase
+  ignore_errors: yes # this will fail on the first execution, which is when there's no plugin installed yet
+  register: asdf_installed_packages
+
+- name: Install Asdf plugins
+  shell: '{{ home_dir }}/.asdf/bin/asdf plugin-add {{ item.key }}'
+  with_dict: '{{ asdf.packages }}'
+  when: item.key not in asdf_installed_packages.stdout
+
+- name: Import Asdf release team's OpenPGP keys
+  environment:
+    PATH: '{{ asdf_path }}'
+  shell: '{{ home_dir }}/.asdf/plugins/{{ item }}/bin/import-release-team-keyring'
+  with_items: '{{ asdf.keyrings }}'
+  when: item not in asdf_installed_packages.stdout
+
+- name: Install Asdf packages
+  environment:
+    PATH: '{{ asdf_path }}'
+  shell: '{{ home_dir }}/.asdf/bin/asdf install {{ item.key }} {{ item.value }}'
+  with_dict: '{{ asdf.packages }}'
+  args:
+    executable: /bin/bash
+  # do not execute the task when both package and its version are already there
+  when: item.key not in asdf_installed_packages.stdout and item.value not in asdf_installed_packages.stdout
+
+- name: Set global Asdf packages
+  shell: '{{ home_dir }}/.asdf/bin/asdf install {{ item.key }} {{ item.value }}'
+  with_dict: '{{ asdf.packages }}'
+  args:
+    executable: /bin/bash
+  when: item.key not in asdf_installed_packages.stdout

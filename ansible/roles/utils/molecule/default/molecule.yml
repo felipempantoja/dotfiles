@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+  options:
+    ignore-certs: true
+    # ignore-errors: true
+driver:
+  name: docker
+platforms:
+  - name: ubuntu
+    image: ubuntu:20.04
+  # - name: Archlinux
+  #   image: jonathonf/manjaro:latest
+  # - name: Archlinux
+  #   image: archlinux/archlinux:base-20210110.0.13332
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_LIBRARY: ../../../../library
+verifier:
+  name: ansible
+lint: |
+  set -e
+  # needs to solve few things first
+  yamllint .
+  ansible-lint

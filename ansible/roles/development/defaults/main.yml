@@ -1,0 +1,16 @@
+---
+packages_cross:
+  - docker
+  - docker-compose
+  - jq
+
+packages_asdf:
+  - java
+  - maven
+  - neovim
+  - ruby
+
+packages_yarn:
+  - chalk
+  - http-server
+  - json-server

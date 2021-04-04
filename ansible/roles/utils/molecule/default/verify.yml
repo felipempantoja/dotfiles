@@ -1,0 +1,24 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Gather package facts
+      package_facts:
+        manager: auto
+
+    - name: Verify Installed Packages
+      assert:
+        that: "'{{ item }}' in ansible_facts.packages"
+      with_items: '{{ packages }}'
+
+    - name: Verify Package Groups
+      assert:
+        that:
+          - packages is defined
+          - packages_yay is not defined
+          - packages_yarn is not defined
+
+    - name: Debug results
+      debug:
+        var: this.content

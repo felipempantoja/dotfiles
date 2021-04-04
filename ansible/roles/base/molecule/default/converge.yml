@@ -1,0 +1,21 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    # - name: Add asdf paths to PATH env var
+    # shell: 'export PATH=$PATH:/root/.asdf/shims:/root/.asdf/bin'
+    # - name: Create a non-root user
+    # user:
+    #   name: testinfra
+    #   password: "{{ '123456' | password_hash('sha512') }}"
+    #   groups: sudo
+    #   append: yes
+    # become: yes
+    # shell: 'adduser --disabled-password --gecos "" testinfra'
+
+    - name: 'Include base'
+      include_role:
+        name: 'base'
+      vars:
+        # ansible_user: testinfra
+        home_dir: /home/ansible

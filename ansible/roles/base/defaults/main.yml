@@ -1,0 +1,14 @@
+---
+packages_cross:
+  - curl
+
+packages_Ubuntu:
+  - gnupg2
+
+asdf:
+  version: v0.8.0 # TODO could try to get the latest version automatically
+  packages:
+    nodejs: 15.12.0
+    yarn: 1.22.10
+  keyrings:
+    - nodejs

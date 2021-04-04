@@ -1,0 +1,39 @@
+---
+- name: Install YADM (Ubuntu only)
+  package:
+    name: yadm
+    state: present
+  become: yes
+  register: yadm_package
+  when: ansible_distribution == 'Ubuntu'
+  tags:
+    - dotfiles
+
+- name: Install YADM (Archlinux only)
+  yay:
+    name: yadm
+    state: present
+  become: yes
+  register: yadm_package
+  when: ansible_distribution == 'Archlinux'
+  tags:
+    - dotfiles
+
+- name: Check if my dotfiles were already pulled from YADM
+  stat:
+    path: '{{ home_dir }}/.face' # not a very clever approach
+  register: my_face
+  tags:
+    - dotfiles
+
+- name: Clone my Dotfiles Repository (Just Once!)
+  shell: >
+    cd {{ home_dir }}
+    && yadm init
+    && yadm remote add origin {{ dotfiles_repo_url }}
+    && yadm fetch
+    && yadm branch master origin/master
+    && yadm checkout master
+  when: not my_face.stat.exists
+  tags:
+    - dotfiles

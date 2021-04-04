@@ -3,4 +3,3 @@
   shell: 'code --install-extension Shan.code-settings-sync'
   tags:
     - development
-    - vscode

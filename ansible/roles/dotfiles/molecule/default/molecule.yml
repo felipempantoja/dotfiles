@@ -1,0 +1,27 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: ubuntu
+    image: ubuntu:20.04
+  - name: archlinux
+    image: archlinux:base-20210328.0.18194
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      ubuntu:
+        ansible_user: ansible
+      archlinux:
+        ansible_user: ansible
+  env:
+    ANSIBLE_LIBRARY: ../../../../library
+  log: True
+verifier:
+  name: ansible
+lint: |
+  set -e
+  yamllint .
+  ansible-lint

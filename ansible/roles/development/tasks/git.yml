@@ -9,4 +9,3 @@
     dest: /home/{{ user_name }}/.gitconfig
   tags:
     - development
-    - git

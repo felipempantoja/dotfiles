@@ -1,0 +1,11 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Gather package facts
+      package_facts:
+        manager: auto
+
+    - name: Debug results
+      debug:
+        var: this.content

@@ -8,3 +8,4 @@ yarn 1.22.5
 terraform 0.13.3
 redis 6.0.9
 neovim stable
+haskell 9.0.1

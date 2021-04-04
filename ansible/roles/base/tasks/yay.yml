@@ -1,0 +1,16 @@
+---
+- name: Register Yay AUR Helper status
+  stat:
+    path: /usr/bin/yay
+  register: yay_bin
+
+- name: Download Yay AUR Helper from Git Repo
+  git:
+    repo: 'https://aur.archlinux.org/yay.git'
+    dest: '{{ home_dir }}/yay'
+    force: yes
+  when: not yay_bin.stat.exists
+
+- name: Install Yay AUR Helper
+  shell: 'cd {{ home_dir }}/yay && makepkg -si --noconfirm'
+  when: not yay_bin.stat.exists

@@ -1,42 +1,58 @@
-- name: Evaluate variables
-  set_fact:
-    packages_list: "{{ lookup('vars', packages, default=[]) }}"
-    packages_distro_list: "{{ lookup('vars', packages_distro, default=[]) }}"
-    packages_snap_list: "{{ lookup('vars', packages_snap, default=[]) }}"
-    packages_yay_list: "{{ lookup('vars', packages_yay, default=[]) }}"
-
-- name: Install {{ tag }} packages from standard package manager
+---
+# TODO check two possibilities:
+# 1. use pre_tasks instead of these weird "required packages" convention
+# 2. split base role even more to make it as dependency for any other role with just the essential
+- name: Install required packages before any other stuff
   package:
     name: '{{ item }}'
     state: present
   with_items:
-    - '{{ packages_list | default([]) + packages_distro_list | default([]) }}'
+    - '{{ required_packages | default([]) }}'
   become: yes
-  when: packages_list is defined or packages_distro_list is defined
-  tags:
-    - '{{ tag }}'
+  when: required_packages is defined
 
-- name: Install {{ tag }} packages from Snap
-  snap:
-    name: '{{ packages_snap_list }}'
+- name: Add APT repos (Ubuntu only)
+  apt_repository:
+    repo: '{{ item }}'
+  with_items: '{{ apt_repos }}'
+  when: ansible_distribution == 'Ubuntu' and apt_repos is defined
+
+- name: Install cross distro packages from standard package manager
+  package:
+    name: '{{ item }}'
     state: present
-    classic: yes
-  when: packages_snap_list is defined
+  with_items:
+    - '{{ packages_cross | default([]) }}'
   become: yes
-  tags:
-    - '{{ tag }}'
+  when: packages_cross is defined
 
-- name: Install {{ tag }} packages from Yay AUR Helper (Archlinux only)
-  yay: name={{ packages_yay_list }} state=present
-  when: ansible_distribution == 'Archlinux' and packages_yay_list is defined
-  tags:
-    - '{{ tag }}'
+- name: Install Archlinux packages from standard package manager
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - '{{ packages_Archlinux }}'
+  become: yes
+  when: ansible_distribution == 'Archlinux' and packages_Archlinux is defined
 
-- name: Install {{ tag }} global packages from Yarn Package
+- name: Install Ubuntu packages from standard package manager
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - '{{ packages_Ubuntu }}'
+  become: yes
+  when: ansible_distribution == 'Ubuntu' and packages_Ubuntu is defined
+
+- name: Install packages from Yay AUR Helper (Archlinux only)
+  yay:
+    name: '{{ packages_yay }}'
+    state: present
+  when: ansible_distribution == 'Archlinux' and packages_yay is defined
+
+- name: Install global packages from Yarn Package
   yarn:
-    name: '{{ packages_yarn_list }}'
+    name: '{{ packages_yarn }}'
     global: yes
     state: present
-  when: packages_yarn_list is defined
-  tags:
-    - '{{ tag }}'
+  when: packages_yarn is defined

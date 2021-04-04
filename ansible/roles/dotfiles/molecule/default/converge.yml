@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: 'Include dotfiles'
+      include_role:
+        name: 'dotfiles'
+      vars:
+        home_dir: /home/ansible
+        dotfiles_repo_url: 'https://github.com/felipempantoja/dotfiles.git'

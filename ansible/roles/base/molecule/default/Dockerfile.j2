@@ -1,0 +1,35 @@
+FROM {{ item.image }}
+
+ENV ANSIBLE_USER=ansible SUDO_GROUP=sudo DEPLOY_GROUP=deployer
+
+{% if "ubuntu" in item.image %}
+RUN apt-get update && \
+    apt-get install -y \
+    git \
+    python3 \
+    python3-apt \
+    sudo \
+    && set -xe \
+    && groupadd -r ${ANSIBLE_USER} \
+    && groupadd -r ${DEPLOY_GROUP} \
+    && useradd -m -g ${ANSIBLE_USER} ${ANSIBLE_USER} \
+    && usermod -aG ${SUDO_GROUP} ${ANSIBLE_USER} \
+    && usermod -aG ${DEPLOY_GROUP} ${ANSIBLE_USER} \
+    && sed -i "/^%${SUDO_GROUP}/s/ALL\$/NOPASSWD:ALL/g" /etc/sudoers
+{% elif "archlinux" in item.image %}
+RUN pacman -Syu --noconfirm && \
+    pacman -S --noconfirm \
+    base-devel \
+    git \
+    python3 \
+    sudo \
+    && set -xe \
+    && groupadd -r ${ANSIBLE_USER} \
+    && groupadd -r ${SUDO_GROUP} \
+    && groupadd -r ${DEPLOY_GROUP} \
+    && useradd -m -g ${ANSIBLE_USER} ${ANSIBLE_USER} \
+    && usermod -aG ${SUDO_GROUP} ${ANSIBLE_USER} \
+    && usermod -aG ${DEPLOY_GROUP} ${ANSIBLE_USER} \
+    && sed -i "/^# %${SUDO_GROUP}/s/ALL\$/NOPASSWD:ALL/g" /etc/sudoers \
+    && sed -i "/^# %${SUDO_GROUP}/s/^# //" /etc/sudoers
+{% endif %}

@@ -27,7 +27,6 @@ base_yarn:
   - chalk
   - http-server
   - json-server
-  - node-inspector
   - wikit
 
 communication:
@@ -51,9 +50,6 @@ development_asdf_plugins:
   - nodejs
   - ruby
   - yarn
-
-development_asdf_keyring:
-  - nodejs
 
 editors:
   - vim

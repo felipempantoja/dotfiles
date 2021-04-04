@@ -1,0 +1,37 @@
+---
+apt_repos:
+  - ppa:mmstick76/alacritty
+
+required_packages:
+  - gnupg
+
+packages_cross:
+  - alacritty
+  - bat
+  - fzf
+  - htop
+  - ncdu
+  - ntfs-3g
+  - pass
+  - powertop
+  - ranger
+  - renameutils
+  - ripgrep
+  - speedtest-cli
+  - testdisk
+  - thefuck
+  - tldr
+  - tmux
+  - tree
+  - zsh
+
+packages_Archlinux:
+  - exa
+  - lm_sensors
+
+packages_Ubuntu:
+  - lm-sensors
+
+packages_yarn:
+  - vtop
+  - wikit

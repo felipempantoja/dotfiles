@@ -1,0 +1,73 @@
+---
+# Ansible Template Tester: https://ansible.sivel.net/test
+
+- name: Verify
+  hosts: all
+  # gather_facts: false
+  vars_files:
+    - '../../defaults/main.yml'
+  tasks:
+    - name: Gather package facts
+      package_facts:
+        manager: auto
+
+    - name: Verify Cross Installed Packages
+      assert:
+        that: "'{{ item }}' in ansible_facts.packages"
+      loop: '{{ packages_cross }}'
+
+    - name: Verify Ubuntu Installed Packages
+      assert:
+        that: "'{{ item }}' in ansible_facts.packages"
+      loop: '{{ packages_Ubuntu }}'
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: Verify Yay AUR Helper Installation
+      block:
+        - name: Register Yay AUR Helper status
+          stat:
+            path: /usr/bin/yay
+          register: yay_bin
+
+        - name: Assert that Yay AUR Helper is installed
+          assert:
+            that:
+              - yay_bin.stat.exists
+      when: ansible_distribution == 'Archlinux'
+
+    - name: Verify Asdf Installation
+      block:
+        - name: Register Asdf version
+          command: /home/ansible/.asdf/bin/asdf version
+          register: asdf_version
+
+        - name: Verify Asdf version
+          assert:
+            that: 'asdf.version in asdf_version.stdout'
+
+        # - name: Evaluate Asdf variables
+        #   set_fact:
+        #     expected_asdf_packages:
+        #       - nodejs
+        #       - yarn
+
+        - name: Collect Installed Asdf Packages
+          command: '/home/ansible/.asdf/bin/asdf plugin-list'
+          register: actual_asdf_packages
+
+        - name: Verify Installed Asdf Packages
+          loop: "{{ actual_asdf_packages.stdout.split('\n') }}"
+          assert:
+            that: '"{{ item }}" in asdf.packages'
+
+    - name: Verify Package Groups
+      when: false # disabled while I dont know how to make these variable visible in this scope
+      assert:
+        that:
+          - packages_cross is defined
+          - packages_Archlinux is defined
+          - asdf is defined
+
+    - name: Debug results
+      debug:
+        var: this.content

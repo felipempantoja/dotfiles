@@ -16,6 +16,8 @@
     - { role: browsers, tags: ['browsers'] }
     - { role: communication, tags: ['communication'] }
     - { role: development, tags: ['development'] }
+    - { role: dotfiles, tags: ['dotfiles'] }
     - { role: editors, tags: ['editors'] }
     - { role: multimedia, tags: ['multimedia'] }
     - { role: network, tags: ['network'] }
+    - { role: network, tags: ['utils'] }
