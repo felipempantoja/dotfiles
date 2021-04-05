@@ -6,9 +6,6 @@
 # alacritty terminal configs
 !.config/alacritty/.alacritty.yml
 
-# ansible playbooks
-!ansible/
-
 # ranger
 !.config/ranger/rc.conf
 
