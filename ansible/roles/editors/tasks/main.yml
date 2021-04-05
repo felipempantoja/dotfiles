@@ -1,9 +1,0 @@
----
-- name: Install Editors packages
-  include_tasks: ../../install_packages_template.yml
-  vars:
-    tag: editors
-    packages: editors
-    packages_distro: editors_distro
-    packages_snap: editors_snap
-    packages_yay: editors_yay

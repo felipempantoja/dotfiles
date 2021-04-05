@@ -1,9 +1,0 @@
----
-- name: Install Communication packages
-  include_tasks: ../../install_packages_template.yml
-  vars:
-    tag: communication
-    packages: communication
-    packages_distro: communication_distro
-    packages_snap: communication_snap
-    packages_yay: communication_yay
