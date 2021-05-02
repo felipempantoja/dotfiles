@@ -88,13 +88,7 @@ alias rename='qmv -f do'
 alias vpn='sudo openfortivpn -c ~/.openfortivpn.conf'
 alias vpn-pci='sudo openfortivpn -c ~/.openfortivpn-pci.conf'
 
-eval $(thefuck --alias)
-
-# deprecated
-alias tx="tmuxinator"
-alias txe="tmuxinator e $1"
-alias txs='f(){ tmuxinator s "$@" ${PWD##*/}; unset -f f; }; f'
-alias txsr="tmuxinator s rails ${PWD##*/}"
+#eval $(thefuck --alias)
 
 # Git Pre-Commit hook for Ruby (using rubocop)
 alias gpcr="wget -O .git/hooks/pre-commit https://raw.githubusercontent.com/felipempantoja/utils/main/git/ruby-pre-commit"
